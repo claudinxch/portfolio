@@ -1,5 +1,6 @@
 import { ComponentProps } from 'react'
 import { useTheme } from '../contexts/theme'
+import { Footer } from './footer'
 
 interface ContainerProps extends ComponentProps<'div'> {}
 
@@ -8,11 +9,13 @@ export const Container = ({ className, ...props }: ContainerProps) => {
 
   return (
     <div
-      className={`w-[calc(100% - 300px)] overflow-hidden h-screen p-8 font-inter transition-colors duration-500 xl:px-12 xl:pl-20 xl:py-12 ${
+      className={`w-[calc(100% - 300px)] flex flex-col overflow-hidden h-screen p-8 font-inter transition-colors duration-500 pb-4 xl:px-12 xl:pl-20 xl:pt-12 ${
         className || ''
-      } ${mode === 'dark' ? 'container-dark-background text-[#EFF1F5]' : 'container-light-background text-[#101010]'} sm:ml-[300px]`}
+      } ${mode === 'dark' ? 'container-dark-background' : 'container-light-background'} sm:ml-[300px]`}
     >
-      <div className="appearing-from-right">{props.children}</div>
+      <div className="flex-grow appearing-from-right">{props.children}</div>
+      <Footer className={`mt-auto`} />
     </div>
   )
 }
+// 2c2c2c
