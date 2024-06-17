@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dark-button-hover:hover {
+    background-color: #EBEBEB;
+    border-color: #212121;
+    color: #101010;
+    transform: scale(1.25);
+}
+
+.light-button-hover:hover {
+    background-color: #212121;
+    color: #EFF1F5;
+    border-color: #EBEBEB;
+    transform: scale(1.25);
+}
+
+.container-dark-background {
+    background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.005) 0, rgba(255, 255, 255, 0.005) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255, 255, 255, 0.005) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.005) 1px, transparent 1px);
+    background-size: 10px 10px;
+    background-attachment: fixed;
+    background-color: #101010;
+}
+
+.container-light-background {
+    background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.005) 0, rgba(255, 255, 255, 0.005) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255, 255, 255, 0.005) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.005) 1px, transparent 1px);
+    background-size: 10px 10px;
+    background-attachment: fixed;
+    background-color: #EFF1F1;
+}
+
+.custom-text{
+  color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(to right, #ec4899, #8a2be2);
+}
+
+.appearing{
+  animation: appear 1.3s ease-in-out;
+}
+
+.appearing-from-right {
+  animation: appear-from-right 1.3s ease-in-out;
+}
+
+@keyframes appear {
+  0%{
+    opacity: 0;
+    transform: translateY(-100vh);
+  }
+  75%{
+    transform: translateY(30px);    
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0vh);
+  }
+}
+
+@keyframes appear-from-right {
+    0% {
+      opacity: 0;
+      transform: translateX(90vw);
+    }
+    75%{
+      transform: translateX(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
