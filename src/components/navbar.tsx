@@ -17,7 +17,7 @@ export const Navbar = () => {
             className={`h-[200px] w-[200px] rounded-full border-2 overflow-hidden transition-colors duration-500 ${mode === 'dark' ? 'border-[#212121]' : 'border-[#EBEBEB]'}`}
           >
             <img
-              src="src/assets/myphoto.jpeg"
+              src="/img/myphoto.jpeg"
               alt=""
               className="w-full h-full object-cover"
             />

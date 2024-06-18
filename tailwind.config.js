@@ -16,6 +16,9 @@ export default {
       inter: ['Inter', 'sans-serif'],
     },
   },
+  screens: {
+    '3xl': '1810px',
+  },
   darkMode: 'selector',
   plugins: [],
 }

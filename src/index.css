@@ -3,6 +3,23 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBCBCB;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ababab;
+}
+
 .dark-button-hover:hover {
     background-color: #EBEBEB;
     border-color: #212121;
@@ -49,6 +66,10 @@
   animation: appear-from-right 1.3s ease-in-out;
 }
 
+.click-me-appear {
+  animation: click-me-appear 0.5s ease-in-out;
+}
+
 @keyframes appear {
   0%{
     opacity: 0;
@@ -76,4 +97,13 @@
       transform: translateX(0);
     }
   }
+
+@keyframes click-me-appear {
+  0% {
+    transform: translateX(-400px)
+  }
+  75%{
+    transform: translateX(10px);
+  }
+}
   
