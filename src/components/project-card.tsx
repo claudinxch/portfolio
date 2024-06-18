@@ -4,24 +4,27 @@ import { ExternalLink, Github } from 'lucide-react'
 
 interface ProjectCardProps {
   repo: RepositoriesInterface
+  openModal: () => void
 }
 
-export const ProjectCard = ({ repo }: ProjectCardProps) => {
+export const ProjectCard = ({ repo, openModal }: ProjectCardProps) => {
   const { mode } = useTheme()
 
-  const openModal = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  const handleOpenModal = (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  ) => {
     // Check if the clicked element is an anchor tag
     const target = event.target as HTMLElement
     if (target.closest('a')) {
       return
     }
-    alert('pix')
+    openModal()
   }
 
   return (
     <div
-      onClick={openModal}
-      className="group flex relative w-[600px] h-[250px] gap-4 p-4 border-[1px] border-slate-200/5 rounded transition-colors duration-300 cursor-pointer hover:bg-zinc-800/20"
+      onClick={handleOpenModal}
+      className={`group flex relative w-[600px] h-[250px] gap-4 p-4 border-[1px] rounded transition-colors duration-300 cursor-pointer ${mode === 'dark' ? 'border-slate-200/5 hover:bg-zinc-800/20' : 'border-[#D4D4D4] hover:bg-zinc-200/50'}`}
     >
       <div className="max-h-[120px] overflow-hidden">
         <img
@@ -34,7 +37,7 @@ export const ProjectCard = ({ repo }: ProjectCardProps) => {
         />
       </div>
       <div className="flex flex-col">
-        <h3 className="text-xl leading-[1.2] text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500">
+        <h3 className="text-xl leading-[1.2] text-transparent bg-clip-text bg-gradient-to-r from-[#EC4899] to-[#8B5CF6]">
           <a
             href={repo.projectLink}
             target="_blank"
@@ -101,7 +104,7 @@ export const ProjectCard = ({ repo }: ProjectCardProps) => {
           {repo.technologies.map((tech, i) => (
             <span
               key={i}
-              className="py-[1px] px-[8px] bg-[#EFF1F5]/5 rounded-full text-sm font-light text-[#EFF1F5]"
+              className={`py-[1px] px-[8px] rounded-full text-sm font-light ${mode === 'dark' ? 'bg-[#EFF1F5]/5 text-[#EFF1F5]' : 'bg-[#101010]/5 text-[#101010]'}`}
             >
               {tech}
             </span>
