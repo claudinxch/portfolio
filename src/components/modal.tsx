@@ -12,9 +12,9 @@ export const Modal = ({ content, closeModal }: ModalProps) => {
   const { mode } = useTheme()
 
   return (
-    <div className="fixed flex top-0 bottom-0 left-0 right-0 bg-[#101010]/30 z-10  justify-center">
+    <div className="fixed flex top-0 bottom-0 left-0 right-0 bg-[#101010]/30 z-10 justify-center">
       <div
-        className={`flex flex-col relative w-[800px] h-[700px] my-auto rounded-xl p-12 ${mode === 'dark' ? 'text-[#EFF1F5] bg-[#181818]' : 'text-[#101010] bg-[#EFF1F5]'}`}
+        className={`flex flex-col relative w-[800px] h-[700px] my-auto rounded-xl p-12 ${mode === 'dark' ? 'text-[#EFF1F5] bg-[#181818]' : 'text-[#101010] bg-[#EFF1F5]'} animate-[in_0.4s]`}
       >
         <button onClick={closeModal}>
           <X
