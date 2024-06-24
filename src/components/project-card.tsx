@@ -42,7 +42,7 @@ export const ProjectCard = ({ repo, openModal }: ProjectCardProps) => {
             href={repo.projectLink}
             target="_blank"
             rel="noreferrer"
-            className="group/link cursor-default"
+            className="group cursor-default"
           >
             <span>{repo.title}</span>
             <span>
@@ -50,7 +50,7 @@ export const ProjectCard = ({ repo, openModal }: ProjectCardProps) => {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
                 fill="currentColor"
-                className="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px"
+                className="inline-block h-4 w-4 shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px"
                 aria-hidden="true"
               >
                 <defs>
@@ -111,7 +111,7 @@ export const ProjectCard = ({ repo, openModal }: ProjectCardProps) => {
           ))}
         </div>
       </div>
-      <button className="absolute hidden text-[#101010] text-base -top-2 right-8 bg-gradient-to-r from-pink-500 to-violet-500 rounded-md px-2 click-me-appear group-hover:flex">
+      <button className="absolute hidden text-[#101010] text-base -top-2 right-8 bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] rounded-md px-2 click-me-appear group-hover:flex">
         click me!
       </button>
     </div>
