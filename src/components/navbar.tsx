@@ -14,11 +14,7 @@ export const Navbar = () => {
       <ModeButton />
       <div className="flex flex-col mx-auto items-start justify-between h-full py-4 appearing">
         <div className="flex flex-col mx-auto items-center">
-          <div
-            className={`h-[200px] w-[200px] rounded-full border-2 overflow-hidden transition-colors duration-500 ${mode === 'dark' ? 'border-[#212121]' : 'border-[#EBEBEB]'}`}
-          >
-            <ProfilePic />
-          </div>
+          <ProfilePic />
           <strong className="text-2xl mt-1">Claudio Moura</strong>
           <p className="text-lg font-medium">Software Engineer</p>
           <div className="flex mt-2 gap-6">
