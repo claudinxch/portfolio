@@ -14,11 +14,11 @@ import { Title } from './title'
 import { repositories } from './data/repositories'
 import { ExpBox } from './exp-box'
 import { NextIcon } from './icons/next-icon'
-import { StorybookIcon } from './icons/storybook-icon'
 import { LinuxIcon } from './icons/linux-icon'
 import { JestIcon } from './icons/jest-icon'
-import { PostgreSQLIcon } from './icons/postgreSQL-icon'
-import { SpringIcon } from './icons/spring-icon'
+// import { StorybookIcon } from './icons/storybook-icon'
+// import { PostgreSQLIcon } from './icons/postgreSQL-icon'
+// import { SpringIcon } from './icons/spring-icon'
 
 export const SkillsSection = () => {
   const { changeId } = useSection()
@@ -93,21 +93,22 @@ export const SkillsSection = () => {
               </span>
             </div>
           </div>
-          <div className="h-[217px] p-4 border-2 border-slate-200/10 rounded-3xl w-[860px]">
+          <div className="h-[217px] p-4 border-2 border-slate-200/10 rounded-3xl w-fit">
+            {/* w-[860px] */}
             <h4 className="text-2xl text-[#EFF1F5] my-2 pl-1">
               Currently Learning
             </h4>
-            <div className="flex flex-row p-5 gap-5 justify-between">
+            <div className="flex flex-row p-5 gap-5 ">
               <IconBox>
                 <NextIcon width={65} />
-              </IconBox>
-              <IconBox>
-                <LinuxIcon width={65} />
               </IconBox>
               <IconBox>
                 <JestIcon width={65} />
               </IconBox>
               <IconBox>
+                <LinuxIcon width={65} />
+              </IconBox>
+              {/* <IconBox>
                 <PostgreSQLIcon width={65} />
               </IconBox>
               <IconBox>
@@ -115,7 +116,7 @@ export const SkillsSection = () => {
               </IconBox>
               <IconBox>
                 <StorybookIcon width={65} />
-              </IconBox>
+              </IconBox> */}
             </div>
           </div>
         </div>

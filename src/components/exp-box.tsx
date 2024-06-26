@@ -8,7 +8,7 @@ interface ExpBoxProps {
 
 export const ExpBox = ({ src, title, from, to, description }: ExpBoxProps) => {
   return (
-    <div className="flex gap-4 items-center p-2 transition-colors duration-300 rounded cursor-pointer hover:bg-zinc-800/20">
+    <div className="flex gap-4 items-center p-2 transition-colors duration-300 rounded cursor-default hover:bg-zinc-800/20">
       <img
         src={src}
         alt=""
