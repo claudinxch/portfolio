@@ -2,6 +2,7 @@ import { ModeButton } from './mode-button'
 import { Github, Linkedin } from 'lucide-react'
 import { useTheme } from '../contexts/theme'
 import { NavLinks } from './nav-links'
+import { ProfilePic } from './profile-pic'
 // CCD0DA
 export const Navbar = () => {
   const { mode } = useTheme()
@@ -16,11 +17,7 @@ export const Navbar = () => {
           <div
             className={`h-[200px] w-[200px] rounded-full border-2 overflow-hidden transition-colors duration-500 ${mode === 'dark' ? 'border-[#212121]' : 'border-[#EBEBEB]'}`}
           >
-            <img
-              src="/img/myphoto.jpeg"
-              alt=""
-              className="w-full h-full object-cover"
-            />
+            <ProfilePic />
           </div>
           <strong className="text-2xl mt-1">Claudio Moura</strong>
           <p className="text-lg font-medium">Software Engineer</p>
