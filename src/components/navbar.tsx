@@ -8,13 +8,13 @@ export const Navbar = () => {
   const { mode } = useTheme()
   return (
     <aside
-      className={`fixed hidden flex-col sm:flex w-[300px] h-svh font-inter shadow-xl  border-r-[1px] transition-colors duration-500
+      className={`fixed hidden flex-col lg:flex w-[300px] h-svh font-inter shadow-xl  border-r-[1px] transition-colors duration-500
       ${mode === 'dark' ? 'bg-[#121212] text-[#EFF1F5] border-r-[#212121] shadow-neutral-900' : 'bg-[#EFF1F5] text-[#101010] border-r-[#EBEBEB]'}`}
     >
       <ModeButton />
       <div className="flex flex-col mx-auto items-start justify-between h-full py-4 appearing">
         <div className="flex flex-col mx-auto items-center">
-          <ProfilePic />
+          <ProfilePic photoUrl="/img/myphoto.jpeg" />
           <strong className="text-2xl mt-1">Claudio Moura</strong>
           <p className="text-lg font-medium">Software Engineer</p>
           <div className="flex mt-2 gap-6">
@@ -54,7 +54,13 @@ export const Navbar = () => {
         className={`flex flex-col mx-auto mb-4 ${mode === 'dark' ? 'text-[#EFF1F5]' : 'text-[#101010]'} font-inter font-medium appearing`}
       >
         <p className="text-sm mt-[2px] leading-loose">
-          E: claudiohenrique0909@gmail.com
+          E:{' '}
+          <a
+            href="mailto:claudiohenrique0909@gmail.com"
+            className="transition-colors duration-200 hover:text-[#707070]"
+          >
+            claudiohenrique0909@gmail.com
+          </a>
         </p>
         <p className="text-sm mt-[2px] leading-loose">
           T: +55 (21) 966 567 171

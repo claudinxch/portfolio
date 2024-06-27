@@ -16,7 +16,7 @@ export const ProjectsSection = () => {
           <PrimaryButton
             onClick={() => changeId()}
             btnTitle={''}
-            className="p-5"
+            className="sm:p-2 lg:p-5"
           />
         </div>
       </div>

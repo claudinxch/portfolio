@@ -19,7 +19,7 @@ export const ProjectList = ({ repositories, ...props }: ProjectListProps) => {
   return (
     <div
       {...props}
-      className="flex flex-wrap gap-4 max-h-[800px] min-w-[400px] pt-4 mr-2 overflow-y-auto overflow-x-hidden 2xl:gap-x-28 3xl:overflow-hidden"
+      className="flex flex-wrap gap-4 max-h-[800px] min-w-[370px] pt-4 mr-2 overflow-y-auto overflow-x-hidden lg:min-w-[650px] lg:justify-center 2xl:justify-normal xl:w-full 2xl:gap-x-28  3xl:overflow-hidden"
     >
       {isModalOpen && modalContent && (
         <Modal

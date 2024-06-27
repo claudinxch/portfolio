@@ -4,7 +4,6 @@ import { Title } from './title'
 import { useTheme } from '../contexts/theme'
 import { useSection } from '../contexts/section'
 import { PrimaryButton } from './primary-button'
-import { NavLinks } from './nav-links'
 
 export const HomeSection = () => {
   const { mode } = useTheme()
@@ -47,7 +46,6 @@ export const HomeSection = () => {
         btnTitle={"Let's get started"}
         className="px-6 py-5 lg:px-28 lg:py-12"
       />
-      <NavLinks className="sm:hidden mt-6" />
     </Container>
   )
 }

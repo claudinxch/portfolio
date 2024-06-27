@@ -24,9 +24,9 @@ export const ProjectCard = ({ repo, openModal }: ProjectCardProps) => {
   return (
     <div
       onClick={handleOpenModal}
-      className={`group flex relative w-[600px] h-[250px] gap-4 p-4 border-[1px] rounded transition-colors duration-300 cursor-pointer ${mode === 'dark' ? 'border-slate-200/5 hover:bg-zinc-800/20' : 'border-[#D4D4D4] hover:bg-zinc-200/50'}`}
+      className={`group flex relative w-[350px] h-[250px] gap-4 p-4 border-[1px] rounded transition-colors duration-300 cursor-pointer ${mode === 'dark' ? 'border-slate-200/5 hover:bg-zinc-800/20' : 'border-[#D4D4D4] hover:bg-zinc-200/50'} lg:w-[600px]`}
     >
-      <div className="max-h-[120px] overflow-hidden">
+      <div className="hidden max-h-[120px] overflow-hidden lg:block">
         <img
           src={repo.image}
           alt=""

@@ -16,11 +16,13 @@ import { ExpBox } from './exp-box'
 import { NextIcon } from './icons/next-icon'
 import { LinuxIcon } from './icons/linux-icon'
 import { JestIcon } from './icons/jest-icon'
+import { useTheme } from '../contexts/theme'
 // import { StorybookIcon } from './icons/storybook-icon'
 // import { PostgreSQLIcon } from './icons/postgreSQL-icon'
 // import { SpringIcon } from './icons/spring-icon'
 
 export const SkillsSection = () => {
+  const { mode } = useTheme()
   const { changeId } = useSection()
   const lanterna = repositories.find(
     (repo) => repo.title === 'Lanterna Luminosa',
@@ -30,9 +32,14 @@ export const SkillsSection = () => {
   return (
     <Container>
       <Title>Skills</Title>
-      <div className="flex h-full justify-between">
-        <div className="max-w-[360px] h-fit p-4 border-2 border-slate-200/10 rounded-3xl mt-16">
-          <h4 className="text-2xl text-[#EFF1F5] my-2">
+      <div className="h-[95%] max-h-[800px] overflow-y-auto overflow-x-hidden flex justify-between flex-col 2xl:flex-row">
+        {/** flex */}
+        <div
+          className={`min-w-[70%] max-w-[90%] h-fit p-4 border-2 rounded-3xl mt-16 2xl:min-w-[360px] 2xl:max-w-[360px] ${mode === 'dark' ? 'border-slate-200/5' : 'border-[#D4D4D4]'}`}
+        >
+          <h4
+            className={`text-2xl my-2 ${mode === 'dark' ? 'text-[#EFF1F5]' : 'text-[#101010]'}`}
+          >
             Languages and Frameworks
           </h4>
           <div className="flex flex-wrap gap-2 gap-y-8 justify-evenly py-4">
@@ -63,8 +70,14 @@ export const SkillsSection = () => {
           </div>
         </div>
         <div className="flex flex-col gap-6">
-          <div className="h-fit p-4 border-2 border-slate-200/10 rounded-3xl mt-16 w-[860px]">
-            <h4 className="text-2xl text-[#EFF1F5] my-2 pl-1">Experience</h4>
+          <div
+            className={`h-fit min-w-[70%] max-w-[90%] p-4 border-2 rounded-3xl mt-16 2xl:min-w-[860px] 2xl:w-[860px] ${mode === 'dark' ? 'border-slate-200/5' : 'border-[#D4D4D4]'}`}
+          >
+            <h4
+              className={`text-2xl my-2 pl-1 ${mode === 'dark' ? 'text-[#EFF1F5]' : 'text-[#101010]'}`}
+            >
+              Experience
+            </h4>
             <div className="flex flex-col gap-5">
               <ExpBox
                 src={lanterna?.image}
@@ -88,17 +101,23 @@ export const SkillsSection = () => {
               implemented local storage functionality. This project built my 
               expertise in JavaScript and React."
               />
-              <span className="text-xs pl-1 text-slate-200/50">
+              <span
+                className={`text-xs pl-1 ${mode === 'dark' ? 'text-slate-200/50' : 'text-slate-400'}`}
+              >
                 looking forward to add more...
               </span>
             </div>
           </div>
-          <div className="h-[217px] p-4 border-2 border-slate-200/10 rounded-3xl w-fit">
+          <div
+            className={`min-w-[70%] max-w-[90%] p-4 border-2 rounded-3xl w-fit sm:min-w-fit sm:h-[217px] ${mode === 'dark' ? 'border-slate-200/5' : 'border-[#D4D4D4]'}`}
+          >
             {/* w-[860px] */}
-            <h4 className="text-2xl text-[#EFF1F5] my-2 pl-1">
+            <h4
+              className={`text-2xl my-2 pl-1 ${mode === 'dark' ? 'text-[#EFF1F5]' : 'text-[#101010]'}`}
+            >
               Currently Learning
             </h4>
-            <div className="flex flex-row p-5 gap-5 ">
+            <div className="flex flex-row flex-wrap justify-center p-5 gap-5 sm:justify-normal ">
               <IconBox>
                 <NextIcon width={65} />
               </IconBox>
@@ -120,7 +139,7 @@ export const SkillsSection = () => {
             </div>
           </div>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center justify-center mt-4 2xl:mt-0">
           <PrimaryButton
             onClick={() => changeId()}
             btnTitle={''}

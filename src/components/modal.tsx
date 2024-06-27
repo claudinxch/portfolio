@@ -14,7 +14,7 @@ export const Modal = ({ content, closeModal }: ModalProps) => {
   return (
     <div className="fixed flex top-0 bottom-0 left-0 right-0 bg-[#101010]/30 z-10 justify-center">
       <div
-        className={`flex flex-col relative w-[800px] h-[700px] my-auto rounded-xl p-12 ${mode === 'dark' ? 'text-[#EFF1F5] bg-[#181818]' : 'text-[#101010] bg-[#EFF1F5]'} animate-[in_0.4s]`}
+        className={`flex flex-col relative w-[80%] h-[700px] my-auto rounded-xl p-12 ${mode === 'dark' ? 'text-[#EFF1F5] bg-[#181818]' : 'text-[#101010] bg-[#EFF1F5]'} animate-[in_0.4s] lg:w-[800px]`}
       >
         <button onClick={closeModal}>
           <X
@@ -39,7 +39,7 @@ export const Modal = ({ content, closeModal }: ModalProps) => {
             {content.title}
           </Title>
           <p className="">{content.description}</p>
-          <div className="flex justify-center gap-10 w-full mt-4">
+          <div className="flex flex-wrap justify-center gap-2 w-full mt-4 md:gap-8 lg:gap-10 md:flex-nowrap">
             {content.technologies.map((tech, i) => (
               <span
                 key={i}

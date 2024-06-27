@@ -1,3 +1,5 @@
+import { useTheme } from '../contexts/theme'
+
 interface ExpBoxProps {
   src: string | undefined
   title: string | undefined
@@ -7,15 +9,18 @@ interface ExpBoxProps {
 }
 
 export const ExpBox = ({ src, title, from, to, description }: ExpBoxProps) => {
+  const { mode } = useTheme()
   return (
-    <div className="flex gap-4 items-center p-2 transition-colors duration-300 rounded cursor-default hover:bg-zinc-800/20">
+    <div
+      className={`flex gap-4 items-center p-2 transition-colors duration-300 rounded cursor-default ${mode === 'dark' ? 'hover:bg-zinc-800/20' : 'hover:bg-zinc-200/50'}`}
+    >
       <img
         src={src}
         alt=""
         width={240}
         height={48}
         loading="lazy"
-        className="rounded border-2 border-[#E040FB]/30 object-fill h-full"
+        className="hidden rounded border-2 border-[#E040FB]/30 object-fill h-full md:flex"
       />
       <div className="flex flex-col">
         <div className="flex items-center justify-between">
@@ -26,7 +31,9 @@ export const ExpBox = ({ src, title, from, to, description }: ExpBoxProps) => {
             {from} — {to}
           </span>
         </div>
-        <p className="text-[#EFF1F5] text-base tracking-tighter">
+        <p
+          className={`text-base tracking-tighter ${mode === 'dark' ? 'text-[#EFF1F5]' : 'text-[#101010]'}`}
+        >
           {description}
         </p>
       </div>
