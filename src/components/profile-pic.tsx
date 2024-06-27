@@ -1,16 +1,23 @@
+import { ComponentProps } from 'react'
 import { useTheme } from '../contexts/theme'
 
-export const ProfilePic = () => {
+interface ProfilePicProps extends ComponentProps<'div'> {
+  photoUrl: string
+  className?: string
+}
+
+export const ProfilePic = ({
+  className,
+  photoUrl,
+  ...props
+}: ProfilePicProps) => {
   const { mode } = useTheme()
   return (
     <div
-      className={`h-[200px] w-[200px] rounded-full border-2 overflow-hidden transition-colors duration-500 ${mode === 'dark' ? 'border-[#212121]' : 'border-[#EBEBEB]'}`}
+      {...props}
+      className={`h-[200px] w-[200px] rounded-full border-2 overflow-hidden transition-colors duration-500 ${className || ''} ${mode === 'dark' ? 'border-[#212121]' : 'border-[#EBEBEB]'}`}
     >
-      <img
-        src="/img/myphoto.jpeg"
-        alt=""
-        className="w-full h-full object-cover"
-      />
+      <img src={photoUrl} alt="" className="w-full h-full object-cover" />
     </div>
   )
 }
