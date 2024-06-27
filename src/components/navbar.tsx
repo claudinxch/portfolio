@@ -3,9 +3,12 @@ import { Github, Linkedin } from 'lucide-react'
 import { useTheme } from '../contexts/theme'
 import { NavLinks } from './nav-links'
 import { ProfilePic } from './profile-pic'
+import { useContactModal } from '../contexts/contact-modal'
 // CCD0DA
 export const Navbar = () => {
   const { mode } = useTheme()
+  const { handleModalState } = useContactModal()
+
   return (
     <aside
       className={`fixed hidden flex-col lg:flex w-[300px] h-svh font-inter shadow-xl  border-r-[1px] transition-colors duration-500
@@ -36,9 +39,10 @@ export const Navbar = () => {
             </a>
           </div>
         </div>
-        <NavLinks className="" />
+        <NavLinks />
         <div className="h-20 w-full flex justify-between items-center py-4">
           <button
+            onClick={() => handleModalState(true)}
             className={`w-20 flex items-center justify-center py-[6px] font-semibold rounded-xl border-2 transition duration-300 hover:scale-110 ${mode === 'dark' ? 'border-[#EBEBEB] dark-button-hover' : 'border-[#212121] light-button-hover'}`}
           >
             Hire me

@@ -2,7 +2,7 @@ import { ComponentProps } from 'react'
 import { useSection } from '../contexts/section'
 
 interface NavLinksInterface extends ComponentProps<'div'> {
-  className: string
+  className?: string
 }
 
 export const NavLinks = ({ className, ...props }: NavLinksInterface) => {
