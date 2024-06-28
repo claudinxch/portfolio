@@ -3,8 +3,8 @@ import { ComponentProps } from 'react'
 import { useTheme } from '../contexts/theme'
 
 interface PrimaryButtonProps extends ComponentProps<'button'> {
-  btnTitle: string
-  className: string
+  btnTitle?: string
+  className?: string
 }
 
 export const PrimaryButton = ({
