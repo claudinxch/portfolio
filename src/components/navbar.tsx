@@ -47,11 +47,13 @@ export const Navbar = () => {
           >
             Hire me
           </button>
-          <button
-            className={`w-20 flex items-center justify-center py-[6px] font-semibold rounded-xl border-2 transition duration-300 hover:scale-110 ${mode === 'dark' ? 'border-[#EBEBEB] dark-button-hover' : 'border-[#212121] light-button-hover'}`}
+          <a
+            href="/CV_Claudio.pdf"
+            className={`w-20 flex items-center justify-center py-[6px] font-semibold rounded-xl cursor-pointer border-2 transition duration-300 hover:scale-110 ${mode === 'dark' ? 'border-[#EBEBEB] dark-button-hover' : 'border-[#212121] light-button-hover'}`}
+            target="_blank"
           >
             CV
-          </button>
+          </a>
         </div>
       </div>
       <div
