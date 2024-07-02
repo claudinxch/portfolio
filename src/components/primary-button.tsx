@@ -1,9 +1,9 @@
 import { ChevronRight } from 'lucide-react'
-import { ComponentProps } from 'react'
+import { ComponentProps, ReactNode } from 'react'
 import { useTheme } from '../contexts/theme'
 
 interface PrimaryButtonProps extends ComponentProps<'button'> {
-  btnTitle?: string
+  btnTitle?: ReactNode
   className?: string
 }
 
