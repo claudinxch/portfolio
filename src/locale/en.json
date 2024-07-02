@@ -1,0 +1,34 @@
+{
+    "translation": {
+        "home_title": "Home",
+        "home_desc1": "Welcome to my code space! I'm ",
+        "home_desc2": ", a Front-end Engineer, from Rio.",
+        "home_phrase1": "I develop cool <strong class='custom-text'>interactive web applications</strong>",
+        "home_phrase2": "I create stunning <strong class='custom-text'>responsive websites</strong>",
+        "home_phrase3": "I code amazing <strong class='custom-text'>interfaces<strong>",
+        "home_phrase4": "I build <strong class='custom-text'>user-friendly applications</strong>",
+        "home_button": "Let's get started",
+
+        "projects_title": "Projects",
+
+        "skills_title": "Skills",
+        "skills_languages": "Languages and Frameworks",
+        "skills_exp": "Experience",
+        "skills_message": "eager to continue expanding...",
+        "skills_learning": "Currently Learning",
+
+        "about_me_title": "About me",
+        "about_me_resume": "Hello! I'm Claudio. I'm a Front-end Developer with excitement for building intuitive, efficient and visually appealing web interfaces. Skilled with modern technologies like React, I'm dedicated to crafting modern responsive user interfaces that significantly enhance user experience. I love learning new ideas, maintaining a continual pursuit of learning and challenging my own always looking to improve my skills. Additionally, I am a team player who loves contributing to solving problems. When I'm not coding, I'm usually playing games, hitting the gym, driving around or listening to some cool songs.",
+        "about_me_card1_title": "Web Development",
+        "about_me_card1_desc": "Specializing in front-end development, able to learn anything needed",
+        "about_me_card2_title": "Full-time available",
+        "about_me_card2_desc": "i am available for full-time positions",
+
+        "mode_button": "switch to {{mode}} mode",
+        "nav_role": "Front-end Engineer",
+        "hire": "Hire me",
+        "tel": "966 567 171",
+        
+        "footer": "coded with passion and coffee"
+    }
+}

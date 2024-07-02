@@ -4,20 +4,18 @@ import { useSection } from '../contexts/section'
 import { PrimaryButton } from './primary-button'
 import { ProjectList } from './project-list'
 import { repositories } from './data/repositories'
+import { useTranslation } from 'react-i18next'
 
 export const ProjectsSection = () => {
   const { changeId } = useSection()
+  const { t } = useTranslation()
   return (
-    <Container className="">
-      <Title className="w-[165px]">Projects</Title>
-      <div className="flex flex-row justify-between">
+    <Container>
+      <Title className="w-[165px]">{t('projects_title')}</Title>
+      <div className="flex flex-col justify-between md:flex-row">
         <ProjectList repositories={repositories} />
-        <div className="flex items-center mt-4">
-          <PrimaryButton
-            onClick={() => changeId()}
-            btnTitle={''}
-            className="sm:p-2 lg:p-5"
-          />
+        <div className="flex items-center justify-center mt-4">
+          <PrimaryButton onClick={() => changeId()} className="md:p-2 lg:p-5" />
         </div>
       </div>
     </Container>

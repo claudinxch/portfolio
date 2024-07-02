@@ -4,29 +4,33 @@ import { Title } from './title'
 import { useTheme } from '../contexts/theme'
 import { useSection } from '../contexts/section'
 import { PrimaryButton } from './primary-button'
+import { useTranslation } from 'react-i18next'
 
 export const HomeSection = () => {
   const { mode } = useTheme()
   const { changeId } = useSection()
+  const { t, i18n } = useTranslation()
 
   const strings: string[] = [
-    'I develop cool <strong class="custom-text">interactive web applications</strong>',
-    'I create stunning <strong class="custom-text">responsive websites</strong>',
-    'I code amazing <strong class="custom-text">interfaces<strong>',
-    'I build <strong class="custom-text">user-friendly applications</strong>',
+    t('home_phrase1'),
+    t('home_phrase2'),
+    t('home_phrase3'),
+    t('home_phrase4'),
   ]
   return (
-    <Container className="">
-      <Title>Home</Title>
+    <Container>
+      <Title>{t('home_title')}</Title>
       <div
         className={`${mode === 'dark' ? 'text-[#EFF1F5]' : 'text-[#101010]'} my-16`}
       >
-        <h1 className="mb-[5px] max-w-[200px] text-[20px] leading-tight font-inter md:text-[44px] md:max-w-[400px] lg:max-w-[1010px] lg:leading-normal">
-          Welcome to my code space! {"I'm"}{' '}
+        <h1
+          className={`mb-[5px] max-w-[200px] text-[20px] leading-tight font-inter md:text-[44px] md:max-w-[400px] lg:max-w-[1010px] lg:leading-normal ${i18n.language === 'pt' && 'lg:max-w-[1100px]'}`}
+        >
+          {t('home_desc1')}
           <strong className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500">
             Claudio Moura
           </strong>
-          , a Front-end Engineer, from Rio.
+          {t('home_desc2')}
         </h1>
         <p className="h-6 max-w-[200px] md:max-w-full">
           <ReactTyped
@@ -43,7 +47,7 @@ export const HomeSection = () => {
       </div>
       <PrimaryButton
         onClick={() => changeId()}
-        btnTitle={"Let's get started"}
+        btnTitle={t('home_button')}
         className="px-6 py-5 lg:px-28 lg:py-12"
       />
     </Container>

@@ -12,7 +12,7 @@ export const Container = ({ className, ...props }: ContainerProps) => {
 
   return (
     <section
-      className={`w-[calc(100% - 300px)] flex flex-col overflow-clip h-screen p-8 font-inter transition-colors duration-500 pb-4 xl:px-12 xl:pl-20  ${
+      className={`w-[calc(100% - 300px)] relative flex flex-col overflow-clip h-screen p-3 font-inter transition-colors duration-500 lg:pb-4 lg:p-8 xl:px-12 xl:pl-20  ${
         className || ''
       } ${mode === 'dark' ? 'container-dark-background' : 'container-light-background'} lg:ml-[300px]`}
     >

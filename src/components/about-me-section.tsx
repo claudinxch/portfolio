@@ -7,20 +7,28 @@ import { useTheme } from '../contexts/theme'
 import { Briefcase, Code, Github, Linkedin } from 'lucide-react'
 import { useContactModal } from '../contexts/contact-modal'
 import { SecondaryButton } from './secondary-button'
+import { useTranslation } from 'react-i18next'
 
 export const AboutMeSection = () => {
   const { changeId } = useSection()
   const { mode } = useTheme()
   const { handleModalState } = useContactModal()
+  const {
+    t,
+    i18n: { language },
+  } = useTranslation()
+
   return (
     <Container>
-      <Title className="w-[180px]">About me</Title>
-      <div className="flex h-[95%] justify-between">
-        <div className="max-h-[800px] w-[90%] pr-1 overflow-x-hidden overflow-y-auto mr-6 flex flex-col xl:pr-[80px] xl:w-full">
+      <Title className={language === 'en' ? 'w-[180px]' : 'w-[195px]'}>
+        {t('about_me_title')}
+      </Title>
+      <div className="flex flex-col h-[88%] justify-between md:flex-row md:h-[95%]">
+        <div className="max-h-[760px] w-[90%] pr-1 overflow-x-hidden overflow-y-auto mr-6 flex flex-col md:max-h-[750px] xl:pr-[80px] xl:w-full 2xl:max-h-[800px]">
           <div
-            className={`w-full h-fit flex flex-col items-center p-8 mt-10 border-2 rounded-xl justify-between ${mode === 'dark' ? 'border-slate-200/5' : 'border-[#D4D4D4]'} xl:flex-row`}
+            className={`w-full h-fit flex flex-col items-center p-8 mt-10 border-2 rounded-xl justify-between ${mode === 'dark' ? 'border-slate-200/5' : 'border-[#D4D4D4]'} 2xl:flex-row 2xl:h-[1030px]`}
           >
-            <div className="order-0 xl:order-last">
+            <div className="order-0 2xl:order-last">
               <ProfilePic
                 photoUrl="/img/myphoto.jpeg"
                 className="flex-none h-[160px] w-[160px] rounded-lg"
@@ -44,28 +52,21 @@ export const AboutMeSection = () => {
                 </a>
               </div>
             </div>
-            <div className="w-[82%] flex flex-col justify-between text-center mt-4 xl:h-[200px] xl:mt-0">
+            <div className="w-[82%] flex flex-col justify-between text-center mt-4 2xl:h-[200px] 2xl:mt-0">
               <p
                 className={`text-base tracking-tighter leading-6 break-words ${mode === 'dark' ? 'text-[#EFF1F5]' : 'text-[#101010]'} lg:text-left lg:tracking-normal lg:leading-normal`}
               >
-                Hello! {"I'm"} Claudio. {"I'm"} a Front-end Developer with
-                excitement for building intuitive, efficient and visually
-                appealing web interfaces. Skilled with modern technologies like
-                React, {"I'm"} dedicated to crafting modern responsive user
-                interfaces that significantly enhance user experience. I love
-                learning new ideas, maintaining a continual pursuit of learning
-                and challenging my own always looking to improve my skills.
-                Additionally, I am a team player who loves contributing to
-                solving problems. When {"I'm"} not coding, {"I'm"} usually
-                playing games, hitting the gym, driving around or listening to
-                some cool songs.
+                {t('about_me_resume')}
               </p>
               <div className="mt-6">
                 <ul
-                  className={`flex flex-col justify-between gap-1 ${mode === 'dark' ? 'text-[#EFF1F5]' : 'text-[#101010]'} xl:flex-row`}
+                  className={`flex flex-col justify-between gap-1 ${mode === 'dark' ? 'text-[#EFF1F5]' : 'text-[#101010]'} 2xl:flex-row`}
                 >
                   <li className="text-sm lg:text-base">
-                    <strong className="custom-text">Age: </strong> 19
+                    <strong className="custom-text">
+                      {language === 'en' ? 'Age' : 'Idade'}:{' '}
+                    </strong>{' '}
+                    19
                   </li>
                   <li className="text-sm lg:text-base">
                     <strong className="custom-text">Email: </strong>
@@ -77,12 +78,16 @@ export const AboutMeSection = () => {
                     </a>
                   </li>
                   <li className="text-sm lg:text-base">
-                    <strong className="custom-text">Phone: </strong>+55 (21) 966
-                    567 171
+                    <strong className="custom-text">
+                      {language === 'en' ? 'Phone' : 'Telefone'}:{' '}
+                    </strong>
+                    +55 (21) {t('tel')}
                   </li>
                   <li className="text-sm lg:text-base">
-                    <strong className="custom-text">Address: </strong>Rio de
-                    Janeiro
+                    <strong className="custom-text">
+                      {language === 'en' ? 'Address' : 'Endereço'}:{' '}
+                    </strong>
+                    Rio de Janeiro
                   </li>
                 </ul>
               </div>
@@ -92,44 +97,43 @@ export const AboutMeSection = () => {
             <div
               className={`w-fit h-[190px] p-4 flex flex-col items-center justify-center text-center gap-3 border-2 rounded-xl ${mode === 'dark' ? 'border-slate-200/5' : 'border-[#D4D4D4]'} md:w-[600px]`}
             >
-              <Briefcase size={36} color="#E040FB" />
+              <Code size={36} color="#E040FB" />
               <p
                 className={`text-lg ${mode === 'dark' ? 'text-[#EFF1F5]' : 'text-[#101010]'}`}
               >
-                Full-time available
+                {t('about_me_card1_title')}
               </p>
               <p
                 className={`text-base ${mode === 'dark' ? 'text-slate-200/50' : 'text-slate-500'}`}
               >
-                i am available for full-time positions
+                {t('about_me_card1_desc')}
               </p>
             </div>
             <div
               className={`w-fit h-[190px] p-4 flex flex-col items-center justify-center text-center gap-3 border-2 rounded-xl ${mode === 'dark' ? 'border-slate-200/5' : 'border-[#D4D4D4]'} md:w-[600px]`}
             >
-              <Code size={36} color="#E040FB" />
+              <Briefcase size={36} color="#E040FB" />
               <p
                 className={`text-lg ${mode === 'dark' ? 'text-[#EFF1F5]' : 'text-[#101010]'}`}
               >
-                Web Development
+                {t('about_me_card2_title')}
               </p>
               <p
                 className={`text-base ${mode === 'dark' ? 'text-slate-200/50' : 'text-slate-500'}`}
               >
-                Specializing in front-end development, able to learn anything
-                needed
+                {t('about_me_card2_desc')}
               </p>
             </div>
           </div>
           <div className="flex justify-center mt-12">
             <SecondaryButton
               onClick={() => handleModalState(true)}
-              btnTitle={'Hire Me'}
-              className="px-6 py-5 lg:px-24 lg:py-7"
+              btnTitle={t('hire')}
+              className="px-6 py-5 lg:w-[249px] lg:h-[92px]"
             />
           </div>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center justify-center mt-4">
           <PrimaryButton onClick={() => changeId()} className="p-5" />
         </div>
       </div>

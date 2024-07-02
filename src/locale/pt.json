@@ -1,0 +1,35 @@
+{
+    "translation": {
+        "home_title": "Início",
+        "home_desc1": "Bem-vindo ao meu Portfolio! Eu sou ",
+        "home_desc2": ", Desenvolvedor Front-end, do Rio.",
+        "home_phrase1": "Eu desenvolvo <strong class='custom-text'>aplicações web interativas</strong>",
+        "home_phrase2": "Eu crio belíssimos <strong class='custom-text'>sites responsivos</strong>",
+        "home_phrase3": "Eu programo incríveis <strong class='custom-text'>interfaces</strong>",
+        "home_phrase4": "Eu construo <strong class='custom-text'>aplicações amigáveis</strong>",
+        "home_button": "Vamos começar",
+
+        "projects_title": "Projetos",
+
+        "skills_title": "Habilidades",
+        "skills_languages": "Linguagens e Frameworks",
+        "skills_exp": "Experiência",
+        "skills_message": "animado para continuar expandindo...",
+        "skills_learning": "Aprendendo",
+
+        "about_me_title": "Sobre mim",
+        "about_me_resume": "Olá! Eu sou o Claudio. Sou um Desenvolvedor Front-end com entusiasmo em construir interfaces web intuitivas, eficientes e visualmente atraentes. Proficiente com tecnologias modernas como React, me dedico a criar interfaces de usuário modernas e responsivas que melhoram significativamente a experiência do usuário. Adoro aprender novas ideias, mantendo uma busca contínua pelo aprendizado e me desafiando, sempre em busca de aprimorar minhas habilidades. Além disso, sou um membro de equipe que adora contribuir para a solução de problemas. Quando não estou programando, geralmente estou jogando, indo à academia, dirigindo por aí ou ouvindo músicas legais.",
+        "about_me_card1_title": "Desenvolvimento Web",
+        "about_me_card1_desc": "Especializando em desenvolvimento front-end, capaz de aprender o que for necessário",
+        "about_me_card2_title": "Disponível para tempo integral",
+        "about_me_card2_desc": "estou disponível para cargos em tempo integral",
+
+        "mode_button": "mudar para tema {{mode}}",
+        "nav_role": "Desenvolvedor Front-end",
+
+        "hire": "Contate-me",
+        "tel": "96656-7171",
+        
+        "footer": "feito com paixão e café"
+    }
+}

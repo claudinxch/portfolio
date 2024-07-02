@@ -7,6 +7,7 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { twMerge } from 'tailwind-merge'
 import emailjs from '@emailjs/browser'
+import { useTranslation } from 'react-i18next'
 
 const service: string = import.meta.env.VITE_SERVICE_ID
 const template: string = import.meta.env.VITE_TEMPLATE_ID
@@ -32,6 +33,9 @@ export const ContactModal = () => {
 
   const { mode } = useTheme()
   const { handleModalState } = useContactModal()
+  const {
+    i18n: { language },
+  } = useTranslation()
 
   const handleContactSubmit: SubmitHandler<ContactFormSchema> = async (
     data,
@@ -57,7 +61,8 @@ export const ContactModal = () => {
           />
         </button>
         <h3 className="inline-flex text-2xl tracking-tight gap-3">
-          Write me a message <ChevronDown size={28} className="self-center" />
+          {language === 'en' ? 'Write me a message' : 'Escreva me uma mensagem'}
+          <ChevronDown size={28} className="self-center" />
         </h3>
 
         <form
@@ -68,7 +73,7 @@ export const ContactModal = () => {
             <input
               {...register('name')}
               type="text"
-              placeholder="Name"
+              placeholder={language === 'en' ? 'Name' : 'Nome'}
               aria-invalid="true"
               className={twMerge(
                 'pb-4 w-full outline-none bg-transparent placeholder-[#A5A5A5] border-b-2 border-[#A5A5A5] transition-colors duration-200',
@@ -102,7 +107,7 @@ export const ContactModal = () => {
           <div>
             <textarea
               {...register('message')}
-              placeholder="Message"
+              placeholder={language === 'en' ? 'Message' : 'Mensagem'}
               aria-invalid="true"
               className={twMerge(
                 'pb-4 h-[120px] w-full outline-none resize-none bg-transparent placeholder-[#A5A5A5] border-b-2 border-[#A5A5A5] transition-colors duration-200',
@@ -129,12 +134,14 @@ export const ContactModal = () => {
                   />
                 ) : isSubmitSuccessful ? (
                   <CircleCheckBig size={30} color="#10B981" />
-                ) : (
+                ) : language === 'en' ? (
                   'Send message'
+                ) : (
+                  'Enviar mensagem'
                 )
               }
               className={twMerge(
-                'p-5 w-[212px] h-[76px]',
+                'p-5 min-w-[212px] w-fit h-[76px]',
                 isSubmitSuccessful && 'border-emerald-500',
               )}
             />

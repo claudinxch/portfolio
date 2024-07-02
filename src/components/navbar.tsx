@@ -4,10 +4,13 @@ import { useTheme } from '../contexts/theme'
 import { NavLinks } from './nav-links'
 import { ProfilePic } from './profile-pic'
 import { useContactModal } from '../contexts/contact-modal'
+import { useTranslation } from 'react-i18next'
+import i18next from 'i18next'
 // CCD0DA
 export const Navbar = () => {
   const { mode } = useTheme()
   const { handleModalState } = useContactModal()
+  const { t } = useTranslation()
 
   return (
     <aside
@@ -19,7 +22,7 @@ export const Navbar = () => {
         <div className="flex flex-col mx-auto items-center">
           <ProfilePic photoUrl="/img/myphoto.jpeg" />
           <strong className="text-2xl mt-1">Claudio Moura</strong>
-          <p className="text-lg font-medium">Software Engineer</p>
+          <p className="text-lg font-medium">{t('nav_role')}</p>
           <div className="flex mt-2 gap-6">
             <a
               href="https://github.com/claudinxch"
@@ -43,9 +46,9 @@ export const Navbar = () => {
         <div className="h-20 w-full flex justify-between items-center py-4">
           <button
             onClick={() => handleModalState(true)}
-            className={`w-20 flex items-center justify-center py-[6px] font-semibold rounded-xl border-2 transition duration-300 hover:scale-110 ${mode === 'dark' ? 'border-[#EBEBEB] dark-button-hover' : 'border-[#212121] light-button-hover'}`}
+            className={`w-20 flex items-center justify-center py-[6px] font-semibold rounded-xl border-2 transition duration-300 hover:scale-110 ${mode === 'dark' ? 'border-[#EBEBEB] dark-button-hover' : 'border-[#212121] light-button-hover'} ${i18next.language === 'pt' && 'w-[110px]'}`}
           >
-            Hire me
+            {t('hire')}
           </button>
           <a
             href="/CV_Claudio.pdf"
@@ -68,9 +71,7 @@ export const Navbar = () => {
             claudiohenrique0909@gmail.com
           </a>
         </p>
-        <p className="text-sm mt-[2px] leading-loose">
-          T: +55 (21) 966 567 171
-        </p>
+        <p className="text-sm mt-[2px] leading-loose">T: +55 (21) {t('tel')}</p>
       </div>
     </aside>
   )

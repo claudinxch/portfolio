@@ -5,6 +5,7 @@ import './index.css'
 import { ThemeProvider } from './contexts/theme.tsx'
 import { SectionProvider } from './contexts/section.tsx'
 import { ContactModalProvider } from './contexts/contact-modal.tsx'
+import './lib/i18n.ts'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
