@@ -1,11 +1,50 @@
-import { ChevronDown, X } from 'lucide-react'
+import { ChevronDown, CircleCheckBig, LoaderCircle, X } from 'lucide-react'
 import { useTheme } from '../contexts/theme'
 import { useContactModal } from '../contexts/contact-modal'
 import { SecondaryButton } from './secondary-button'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { twMerge } from 'tailwind-merge'
+import emailjs from '@emailjs/browser'
+
+const service: string = import.meta.env.VITE_SERVICE_ID
+const template: string = import.meta.env.VITE_TEMPLATE_ID
+const key: string = import.meta.env.VITE_API_KEY
+
+const contactFormSchema = z.object({
+  name: z.string().min(1),
+  email: z.string().email(),
+  message: z.string().min(1),
+})
+
+type ContactFormSchema = z.infer<typeof contactFormSchema>
 
 export const ContactModal = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting, isSubmitSuccessful },
+    reset,
+  } = useForm<ContactFormSchema>({
+    resolver: zodResolver(contactFormSchema),
+  })
+
   const { mode } = useTheme()
   const { handleModalState } = useContactModal()
+
+  const handleContactSubmit: SubmitHandler<ContactFormSchema> = async (
+    data,
+  ) => {
+    try {
+      await emailjs.send(service, template, data, key)
+      reset()
+      setTimeout(() => {
+        handleModalState(false)
+      }, 1750)
+    } catch (err) {}
+  }
+
   return (
     <div className="fixed flex top-0 bottom-0 left-0 right-0 bg-[#101010]/30 z-40 justify-center">
       <div
@@ -21,40 +60,84 @@ export const ContactModal = () => {
           Write me a message <ChevronDown size={28} className="self-center" />
         </h3>
 
-        <form className="flex flex-col mt-6 gap-9">
+        <form
+          onSubmit={handleSubmit(handleContactSubmit)}
+          className="flex flex-col mt-6 gap-9"
+        >
           <div>
             <input
+              {...register('name')}
               type="text"
-              name="from_name"
-              id="from_name"
               placeholder="Name"
-              required
               aria-invalid="true"
-              className={`pb-4 w-full outline-none bg-transparent placeholder-[#A5A5A5] border-b-2 border-[#A5A5A5] transition-colors duration-200 ${mode === 'dark' ? 'text-[#EFF1F5] focus:placeholder-[#EFF1F5] focus:border-[#EFF1F5]' : 'text-[#101010] focus:placeholder-[#101010] focus:border-[#101010]'}`}
+              className={twMerge(
+                'pb-4 w-full outline-none bg-transparent placeholder-[#A5A5A5] border-b-2 border-[#A5A5A5] transition-colors duration-200',
+                mode === 'dark'
+                  ? 'text-[#EFF1F5] focus:placeholder-[#EFF1F5] focus:border-[#EFF1F5]'
+                  : 'text-[#101010] focus:placeholder-[#101010] focus:border-[#101010]',
+                errors?.name &&
+                  'placeholder-[#CB0303] border-[#CB0303] focus:placeholder-[#CB0303] focus:border-[#CB0303]',
+                isSubmitSuccessful &&
+                  'placeholder-emerald-500 border-emerald-500',
+              )}
             />
           </div>
           <div>
             <input
+              {...register('email')}
               type="email"
-              name="from_email"
-              id="from_email"
               placeholder="Email"
-              required
-              className={`pb-4 w-full outline-none bg-transparent placeholder-[#A5A5A5] border-b-2 border-[#A5A5A5] transition-colors duration-200 ${mode === 'dark' ? 'text-[#EFF1F5] focus:placeholder-[#EFF1F5] focus:border-[#EFF1F5]' : 'text-[#101010] focus:placeholder-[#101010] focus:border-[#101010]'}`}
+              className={twMerge(
+                'pb-4 w-full outline-none bg-transparent placeholder-[#A5A5A5] border-b-2 border-[#A5A5A5] transition-colors duration-200',
+                mode === 'dark'
+                  ? 'text-[#EFF1F5] focus:placeholder-[#EFF1F5] focus:border-[#EFF1F5]'
+                  : 'text-[#101010] focus:placeholder-[#101010] focus:border-[#101010]',
+                errors?.email &&
+                  'placeholder-[#CB0303] border-[#CB0303] focus:placeholder-[#CB0303] focus:border-[#CB0303]',
+                isSubmitSuccessful &&
+                  'placeholder-emerald-500 border-emerald-500',
+              )}
             />
           </div>
           <div>
             <textarea
-              name="message"
-              id="message"
+              {...register('message')}
               placeholder="Message"
-              required
               aria-invalid="true"
-              className={`pb-4 h-[120px] w-full outline-none resize-none bg-transparent placeholder-[#A5A5A5] border-b-2 border-[#A5A5A5] transition-colors duration-200 ${mode === 'dark' ? 'text-[#EFF1F5] focus:placeholder-[#EFF1F5] focus:border-[#EFF1F5]' : 'text-[#101010] focus:placeholder-[#101010] focus:border-[#101010]'}`}
+              className={twMerge(
+                'pb-4 h-[120px] w-full outline-none resize-none bg-transparent placeholder-[#A5A5A5] border-b-2 border-[#A5A5A5] transition-colors duration-200',
+                mode === 'dark'
+                  ? 'text-[#EFF1F5] focus:placeholder-[#EFF1F5] focus:border-[#EFF1F5]'
+                  : 'text-[#101010] focus:placeholder-[#101010] focus:border-[#101010]',
+                errors?.message &&
+                  'placeholder-[#CB0303] border-[#CB0303] focus:placeholder-[#CB0303] focus:border-[#CB0303]',
+                isSubmitSuccessful &&
+                  'placeholder-emerald-500 border-emerald-500',
+              )}
             ></textarea>
           </div>
           <div className="flex items-center mt-5">
-            <SecondaryButton btnTitle="Send message" className="p-5" />
+            <SecondaryButton
+              disabled={isSubmitting && isSubmitSuccessful}
+              type="submit"
+              btnTitle={
+                isSubmitting ? (
+                  <LoaderCircle
+                    size={30}
+                    color={mode === 'dark' ? '#EFF1F5' : '#101010'}
+                    className="animate-spin"
+                  />
+                ) : isSubmitSuccessful ? (
+                  <CircleCheckBig size={30} color="#10B981" />
+                ) : (
+                  'Send message'
+                )
+              }
+              className={twMerge(
+                'p-5 w-[212px] h-[76px]',
+                isSubmitSuccessful && 'border-emerald-500',
+              )}
+            />
           </div>
         </form>
       </div>

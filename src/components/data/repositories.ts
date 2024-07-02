@@ -12,16 +12,6 @@ export const repositories: Array<RepositoriesInterface> = [
     technologies: ['React', 'JavaScript', 'Router', 'CSS', 'RestAPI'],
   },
   {
-    title: 'Meal Map',
-    description:
-      'Meal Map brings you a world of culinary, offering any kind of recipe you desire! You can explore a vast collection of dishes from various cuisines and diets. Save your favorite recipes for later, and discover the perfect meal for any ocasion.',
-    image: '/img/meal-map.png',
-    video: '/video/tokenvideo.mkv',
-    repositoryLink: 'https://github.com/claudinxch/meal-map',
-    projectLink: '',
-    technologies: ['React', 'Axios', 'Tailwindcss', 'React Query'],
-  },
-  {
     title: 'Lanterna Luminosa',
     description:
       'Volunteer project to create a landing page for a Non-governmental organization dedicated to supporting women who suffer from abuse. It is a user-friendly interface that highlights its mission, services, stories and events.',
@@ -30,6 +20,16 @@ export const repositories: Array<RepositoriesInterface> = [
     repositoryLink: 'https://github.com/bolodissenoura/lantera-luminosa',
     projectLink: 'https://www.lanternaluminosa.com.br',
     technologies: ['Next', 'JavaScript', 'TailwindCSS', 'Zustand'],
+  },
+  {
+    title: 'Meal Map',
+    description:
+      'Meal Map brings you a world of culinary, offering any kind of recipe you desire! You can explore a vast collection of dishes from various cuisines and diets. Save your favorite recipes for later, and discover the perfect meal for any ocasion. Currently in Progress.',
+    image: '/img/meal-map.png',
+    video: '/video/tokenvideo.mkv',
+    repositoryLink: 'https://github.com/claudinxch/meal-map',
+    projectLink: '',
+    technologies: ['React', 'Axios', 'Tailwindcss', 'React Query'],
   },
   {
     title: 'Pomodoro Tracker',
