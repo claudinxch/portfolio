@@ -8,12 +8,8 @@ interface NavLinksInterface extends ComponentProps<'div'> {
 
 export const NavLinks = ({ className, ...props }: NavLinksInterface) => {
   const { changeId } = useSection()
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
 
-  const handleChangeLanguage = () => {
-    const newLang = i18n.language === 'en' ? 'pt' : 'en'
-    i18n.changeLanguage(newLang)
-  }
   return (
     <div
       {...props}
@@ -43,9 +39,6 @@ export const NavLinks = ({ className, ...props }: NavLinksInterface) => {
       >
         {t('about_me_title')}
       </span>
-      <button className="bg-white text-black" onClick={handleChangeLanguage}>
-        change lang
-      </button>
     </div>
   )
 }

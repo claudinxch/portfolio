@@ -11,6 +11,10 @@ export default {
           '100%': { transform: 'rotate(360deg)' },
         },
       },
+      backgroundImage: {
+        'usa-image': 'url("/img/usa-flag.svg")',
+        'bra-image': 'url("/img/brasil-flag.svg")',
+      },
     },
     fontFamily: {
       inter: ['Inter', 'sans-serif'],

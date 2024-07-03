@@ -3,6 +3,7 @@ import { useTheme } from '../contexts/theme'
 import { Footer } from './footer'
 import { useContactModal } from '../contexts/contact-modal'
 import { ContactModal } from './contact-modal'
+import { FollowMeBox } from './follow-me-box'
 
 interface ContainerProps extends ComponentProps<'div'> {}
 
@@ -18,6 +19,7 @@ export const Container = ({ className, ...props }: ContainerProps) => {
     >
       {isOpen && <ContactModal />}
       <div className="flex-grow appearing-from-right">{props.children}</div>
+      <FollowMeBox />
       <Footer className={`mt-auto`} />
     </section>
   )

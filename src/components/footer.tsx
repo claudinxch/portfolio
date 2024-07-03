@@ -23,7 +23,7 @@ export const Footer = ({ className, ...props }: FooterProps) => {
   return (
     <footer
       {...props}
-      className={`self-start hidden xl:block bottom-1 left-3 ${className} ${isAnimating ? 'appearing-from-right' : ''} ${mode === 'dark' ? 'text-[#2c2c2c]' : 'text-[#d4d4d4]'}`}
+      className={`self-start hidden xl:block bottom-1 left-3 ${className} ${isAnimating ? 'appearing-from-right' : ''} ${mode === 'dark' ? 'text-[#2C2C2C]' : 'text-[#BBBBBB]'}`}
     >
       <div className="flex flex-col items-center">
         <p className="text-base tracking-tight">{t('footer')}</p>
