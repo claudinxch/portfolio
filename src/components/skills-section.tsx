@@ -87,22 +87,14 @@ export const SkillsSection = () => {
                 title={lanterna?.title}
                 from="03/24"
                 to="05/24"
-                description="Open-source project using Next.js where I contributed to the
-              development of the landing page by implementing user-friendly
-              components, refactoring code, and fixing bugs. This experience
-              boosted my skills in modern front-end development and provided
-              valuable insights into best practices in web development."
+                description={t('skills_exp_desc1')}
               />
               <ExpBox
                 src={starFlix?.image}
                 title={starFlix?.title}
                 from="12/24"
                 to="06/24"
-                description="Personal project using React.js where I created reusable 
-              interactive components, set up routing with React Router DOM, 
-              integrated with an API which enabled dynamic data usage, and 
-              implemented local storage functionality. This project built my 
-              expertise in JavaScript and React."
+                description={t('skills_exp_desc2')}
               />
               <span
                 className={`text-xs pl-1 ${mode === 'dark' ? 'text-slate-200/50' : 'text-slate-400'}`}

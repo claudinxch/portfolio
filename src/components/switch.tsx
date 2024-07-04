@@ -5,7 +5,10 @@ import { useTranslation } from 'react-i18next'
 import { useSection } from '../contexts/section'
 
 export const Switch = () => {
-  const [isActive, setIsActive] = useState<boolean>(false)
+  const lang = navigator.language
+  const isPortuguese = lang === 'pt-BR' || lang === 'pt' || lang === 'pt-PT'
+
+  const [isActive, setIsActive] = useState<boolean>(isPortuguese)
   const [isAnimating, setIsAnimating] = useState<boolean>(false)
   const { mode } = useTheme()
   const { sectionId } = useSection()

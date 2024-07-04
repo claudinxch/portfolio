@@ -1,6 +1,7 @@
 export interface RepositoriesInterface {
   title: string
-  description: string
+  englishDescription: string
+  portugueseDescription: string
   image: string
   video: string
   repositoryLink: string

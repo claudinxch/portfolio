@@ -10,10 +10,12 @@
         "home_button": "Vamos começar",
 
         "projects_title": "Projetos",
-
+        
         "skills_title": "Habilidades",
         "skills_languages": "Linguagens e Frameworks",
         "skills_exp": "Experiência",
+        "skills_exp_desc1": "Projeto open-source em Next.js onde contribui para a landing page com componentes amigáveis, refatoração de código e correção de bugs. Essa experiência aprimorou minhas habilidades em front-end e me deu insights valiosos sobre as melhores práticas em desenvolvimento web.",
+        "skills_exp_desc2": "Projeto pessoal em React.js onde criei componentes interativos reutilizáveis, manuseei rotas com React Router DOM, integrei com uma API para uso dinâmico de dados e implementei funcionalidade de armazenamento local. Este projeto me ajudou a desenvolver minha expertise em JavaScript e React.",
         "skills_message": "animado para continuar expandindo...",
         "skills_learning": "Aprendendo",
 
@@ -22,7 +24,7 @@
         "about_me_card1_title": "Desenvolvimento Web",
         "about_me_card1_desc": "Especializando em desenvolvimento front-end, capaz de aprender o que for necessário",
         "about_me_card2_title": "Disponível para tempo integral",
-        "about_me_card2_desc": "estou disponível para cargos em tempo integral",
+        "about_me_card2_desc": "Estou disponível para cargos em tempo integral",
 
         "mode_button": "mudar para tema {{mode}}",
         "nav_role": "Desenvolvedor Front-end",

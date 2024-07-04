@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { useTheme } from '../contexts/theme'
 import { RepositoriesInterface } from '../interfaces/repositories-interface'
 import { ExternalLink, Github } from 'lucide-react'
@@ -9,6 +10,9 @@ interface ProjectCardProps {
 
 export const ProjectCard = ({ repo, openModal }: ProjectCardProps) => {
   const { mode } = useTheme()
+  const {
+    i18n: { language },
+  } = useTranslation()
 
   const handleOpenModal = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>,
@@ -78,7 +82,9 @@ export const ProjectCard = ({ repo, openModal }: ProjectCardProps) => {
         <p
           className={`max-w-[310px] h-[126px] mt-2 leading-normal text-sm ${mode === 'dark' ? 'text-[#EFF1F5]' : 'text-[#101010]'}`}
         >
-          {repo.description}
+          {language === 'en'
+            ? repo.englishDescription
+            : repo.portugueseDescription}
         </p>
         <div
           className={`flex gap-6 mt-2 ${mode === 'dark' ? 'text-[#EFF1F5]' : 'text-[#101010]'}`}
