@@ -1,7 +1,8 @@
+import { useTranslation } from 'react-i18next'
 import { useTheme } from '../contexts/theme'
 import { RepositoriesInterface } from '../interfaces/repositories-interface'
 import { Title } from './title'
-import { X } from 'lucide-react'
+import { ExternalLink, Github, X } from 'lucide-react'
 
 interface ModalProps {
   content: RepositoriesInterface
@@ -10,11 +11,14 @@ interface ModalProps {
 
 export const Modal = ({ content, closeModal }: ModalProps) => {
   const { mode } = useTheme()
+  const {
+    i18n: { language },
+  } = useTranslation()
 
   return (
     <div className="fixed flex top-0 bottom-0 left-0 right-0 bg-[#101010]/30 z-10 justify-center">
       <div
-        className={`flex flex-col relative w-[80%] h-[700px] my-auto rounded-xl p-12 ${mode === 'dark' ? 'text-[#EFF1F5] bg-[#181818]' : 'text-[#101010] bg-[#EFF1F5]'} animate-[in_0.4s] lg:w-[800px]`}
+        className={`flex flex-col relative w-[80%] h-[725px] my-auto rounded-xl p-12 ${mode === 'dark' ? 'text-[#EFF1F5] bg-[#181818]' : 'text-[#101010] bg-[#EFF1F5]'} animate-[in_0.4s] lg:w-[800px]`}
       >
         <button onClick={closeModal}>
           <X
@@ -38,7 +42,32 @@ export const Modal = ({ content, closeModal }: ModalProps) => {
           <Title className="text-xl font-inter font-semibold w-fit border-none">
             {content.title}
           </Title>
-          <p className="">{content.description}</p>
+          <p className="">
+            {language === 'en'
+              ? content.englishDescription
+              : content.portugueseDescription}
+          </p>
+          <div
+            className={`flex w-full gap-6 mt-2 ${mode === 'dark' ? 'text-[#EFF1F5]' : 'text-[#101010]'}`}
+          >
+            <a
+              href={content.projectLink}
+              target="_blank"
+              rel="noreferrer"
+              className={`cursor-pointer flex gap-2 transition-colors duration-150 ${mode === 'dark' ? 'hover:text-[#494949]' : 'hover:text-[#9C9C9C]'}`}
+            >
+              Website <ExternalLink size={22} />
+            </a>
+            <a
+              href={content.repositoryLink}
+              target="_blank"
+              rel="noreferrer"
+              className={`cursor-pointer flex gap-2 transition-colors duration-150 ${mode === 'dark' ? 'hover:text-[#494949]' : 'hover:text-[#9C9C9C]'}`}
+            >
+              {language === 'en' ? 'Repository' : 'Repositório'}
+              <Github size={22} />
+            </a>
+          </div>
           <div className="flex flex-wrap justify-center gap-2 w-full mt-4 md:gap-8 lg:gap-10 md:flex-nowrap">
             {content.technologies.map((tech, i) => (
               <span
