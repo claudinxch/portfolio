@@ -10,7 +10,10 @@ import i18next from 'i18next'
 export const Navbar = () => {
   const { mode } = useTheme()
   const { handleModalState } = useContactModal()
-  const { t } = useTranslation()
+  const {
+    t,
+    i18n: { language },
+  } = useTranslation()
 
   return (
     <aside
@@ -51,9 +54,10 @@ export const Navbar = () => {
             {t('hire')}
           </button>
           <a
-            href="/CV_Claudio.pdf"
+            href={language === 'pt' ? '/CV_Claudio.pdf' : '/Resume_Claudio.pdf'}
             className={`w-20 flex items-center justify-center py-[6px] font-semibold rounded-xl cursor-pointer border-2 transition duration-300 hover:scale-110 ${mode === 'dark' ? 'border-[#EBEBEB] dark-button-hover' : 'border-[#212121] light-button-hover'}`}
             target="_blank"
+            rel="noreferrer"
           >
             CV
           </a>
