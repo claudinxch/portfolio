@@ -28,7 +28,7 @@ export const ProjectCard = ({ repo, openModal }: ProjectCardProps) => {
   return (
     <div
       onClick={handleOpenModal}
-      className={`group flex relative w-[350px] h-[250px] gap-4 p-4 border-[1px] rounded transition-colors duration-300 cursor-pointer ${mode === 'dark' ? 'border-slate-200/5 hover:bg-zinc-800/20' : 'border-[#D4D4D4] hover:bg-zinc-200/50'} lg:w-[600px]`}
+      className={`group flex relative w-[350px] h-[250px] gap-4 p-4 border-[1px] rounded transition-all duration-300 cursor-pointer hover:-translate-y-[2px] ${mode === 'dark' ? 'border-slate-200/5 hover:bg-zinc-800/20' : 'border-[#D4D4D4] hover:bg-zinc-200/50'} lg:w-[600px]`}
     >
       <div className="hidden max-h-[120px] overflow-hidden lg:block">
         <img
@@ -118,7 +118,7 @@ export const ProjectCard = ({ repo, openModal }: ProjectCardProps) => {
         </div>
       </div>
       <button className="absolute hidden text-[#101010] text-base -top-2 right-8 bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] rounded-md px-2 click-me-appear group-hover:flex">
-        click me!
+        {language === 'en' ? 'click me!' : 'clique!'}
       </button>
     </div>
   )
