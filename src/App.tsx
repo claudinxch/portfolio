@@ -4,6 +4,7 @@ import { Sections } from './components/sections'
 import { Switch } from './components/switch'
 import { useSection } from './contexts/section'
 import { useTheme } from './contexts/theme'
+import { Analytics } from '@vercel/analytics/react'
 
 function App() {
   const { sectionId } = useSection()
@@ -19,6 +20,7 @@ function App() {
         <Navbar />
         <Sections id={sectionId} />
         <Switch />
+        <Analytics />
       </div>
     </>
   )
