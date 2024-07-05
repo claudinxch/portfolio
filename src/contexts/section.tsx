@@ -2,7 +2,7 @@ import { ReactNode, createContext, useContext, useState } from 'react'
 
 interface SectionContextInterface {
   sectionId: number
-  changeId: () => void
+  changeId: (newId?: number) => void
 }
 
 interface SectionProviderProps {
