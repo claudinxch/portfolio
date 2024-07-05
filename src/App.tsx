@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import { Footer } from './components/footer'
 import { Navbar } from './components/navbar'
 import { Sections } from './components/sections'
 import { Switch } from './components/switch'
