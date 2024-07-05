@@ -18,7 +18,7 @@ export const HomeSection = () => {
     t('home_phrase4'),
   ]
   return (
-    <Container>
+    <Container className="items-center md:items-start">
       <Title>{t('home_title')}</Title>
       <div
         className={`${mode === 'dark' ? 'text-[#EFF1F5]' : 'text-[#101010]'} my-16`}

@@ -15,7 +15,7 @@ export const ProjectsSection = () => {
       <div className="flex flex-col justify-between md:flex-row">
         <ProjectList repositories={repositories} />
         <div className="flex items-center justify-center mt-4">
-          <PrimaryButton onClick={() => changeId()} className="md:p-2 lg:p-5" />
+          <PrimaryButton onClick={() => changeId()} className="p-5" />
         </div>
       </div>
     </Container>

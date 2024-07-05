@@ -23,8 +23,8 @@ export const AboutMeSection = () => {
       <Title className={language === 'en' ? 'w-[180px]' : 'w-[195px]'}>
         {t('about_me_title')}
       </Title>
-      <div className="flex flex-col h-[88%] justify-between md:flex-row md:h-[95%]">
-        <div className="max-h-[760px] w-[90%] pr-1 overflow-x-hidden overflow-y-auto mr-6 flex flex-col md:max-h-[750px] xl:pr-[80px] xl:w-full 2xl:max-h-[800px]">
+      <div className="flex flex-col items-center md:flex-row md:h-[95%]">
+        <div className="max-h-[800px] w-[90%] pr-1 overflow-x-hidden overflow-y-auto flex flex-col xl:pr-[80px] xl:w-full">
           <div
             className={`w-full h-fit flex flex-col items-center p-8 mt-10 border-2 rounded-xl justify-between ${mode === 'dark' ? 'border-slate-200/5' : 'border-[#D4D4D4]'} 2xl:flex-row 2xl:h-[1030px]`}
           >
