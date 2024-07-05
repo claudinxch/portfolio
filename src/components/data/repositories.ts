@@ -32,21 +32,21 @@ export const repositories: Array<RepositoriesInterface> = [
     portugueseDescription:
       'Meal Map traz um mundo de gastronomia, oferecendo qualquer receita que você desejar! Explore uma vasta coleção de pratos de várias culinárias e dietas. Salve suas receitas favoritas e descubra a refeição perfeita para qualquer ocasião. Atualmente em progresso.',
     image: '/img/meal-map.png',
-    video: '/video/tokenvideo.mkv',
+    video: '/video/mealmap.mkv',
     repositoryLink: 'https://github.com/claudinxch/meal-map',
     projectLink: '',
     technologies: ['React', 'Axios', 'Tailwindcss', 'React Query'],
   },
   {
-    title: 'Pomodoro Tracker',
+    title: 'Pomodoro Buddy',
     englishDescription:
       'Website to track your pomodoro session. It allows you to choose between long and short breaks, ensuring optimal productivity and focus. The site will notify when the time ends. Perfect for studying and improving time management skills.',
     portugueseDescription:
       'Site para cronometrar suas sessões de pomodoro. Permite escolher entre pausas longas e curtas, garantindo produtividade e foco ideais. O site notificará quando o tempo acabar. Perfeito para estudar e melhorar suas habilidades de gerenciamento de tempo.',
-    image: '/img/pomodorotracker.png',
-    video: '/video/pomodorotracker.mkv',
-    repositoryLink: '',
-    projectLink: '',
+    image: '/img/pomodorobuddy.png',
+    video: '/video/pomodorobuddy.mkv',
+    repositoryLink: 'https://github.com/claudinxch/pomodoro-website',
+    projectLink: 'https://pomodoro-buddy.netlify.app',
     technologies: ['React', 'JavaScript', 'CSS'],
   },
   {
@@ -57,8 +57,8 @@ export const repositories: Array<RepositoriesInterface> = [
       'Token Generator oferece uma maneira rápida e fácil de criar tokens únicos. Permite gerar um token com apenas alguns cliques. Seja para autenticação básica ou para fins de segurança simples, Token Generator é a solução ideal.',
     image: '/img/token-generator.png',
     video: '/video/tokengenerator.mkv',
-    repositoryLink: '',
-    projectLink: '',
+    repositoryLink: 'https://github.com/claudinxch/token-generator',
+    projectLink: 'https://token-generator-one.vercel.app',
     technologies: ['React', 'JavaScript', 'Material UI', 'CSS'],
   },
   {

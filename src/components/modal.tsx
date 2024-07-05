@@ -1,3 +1,4 @@
+import { KeyboardEvent, MouseEvent, useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useTheme } from '../contexts/theme'
 import { RepositoriesInterface } from '../interfaces/repositories-interface'
@@ -10,13 +11,35 @@ interface ModalProps {
 }
 
 export const Modal = ({ content, closeModal }: ModalProps) => {
+  const modalRef = useRef<HTMLDivElement>(null)
+
   const { mode } = useTheme()
   const {
     i18n: { language },
   } = useTranslation()
 
+  useEffect(() => {
+    modalRef.current?.focus()
+  }, [])
+
+  const handleClickOutside = (e: MouseEvent<HTMLDivElement>) => {
+    if (e.target === modalRef.current) {
+      closeModal()
+    }
+  }
+
   return (
-    <div className="fixed flex top-0 bottom-0 left-0 right-0 bg-[#101010]/30 z-10 justify-center">
+    <div
+      ref={modalRef}
+      tabIndex={0}
+      onKeyDown={(e: KeyboardEvent<HTMLDivElement>) => {
+        if (e.key === 'Escape') {
+          closeModal()
+        }
+      }}
+      onClick={handleClickOutside}
+      className="fixed flex top-0 bottom-0 left-0 right-0 bg-[#101010]/30 z-10 justify-center"
+    >
       <div
         className={`flex flex-col relative w-[80%] h-[725px] my-auto rounded-xl p-12 ${mode === 'dark' ? 'text-[#EFF1F5] bg-[#181818]' : 'text-[#101010] bg-[#EFF1F5]'} animate-[in_0.4s] lg:w-[800px]`}
       >
