@@ -8,8 +8,8 @@ export const Switch = () => {
   const lang = navigator.language
   const isPortuguese = lang === 'pt-BR' || lang === 'pt' || lang === 'pt-PT'
 
-  const [isActive, setIsActive] = useState<boolean>(isPortuguese)
-  const [isAnimating, setIsAnimating] = useState<boolean>(false)
+  const [isActive, setIsActive] = useState(isPortuguese)
+  const [isAnimating, setIsAnimating] = useState(false)
   const { mode } = useTheme()
   const { sectionId } = useSection()
   const { i18n } = useTranslation()

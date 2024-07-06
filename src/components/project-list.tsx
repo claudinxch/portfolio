@@ -7,7 +7,7 @@ interface ProjectListProps extends ComponentProps<'div'> {
 }
 
 export const ProjectList = ({ repositories, ...props }: ProjectListProps) => {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const [modalContent, setModalContent] = useState<Repositories | null>(null)
 
   const openModal = (content: Repositories) => {
