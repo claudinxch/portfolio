@@ -1,17 +1,16 @@
 import { ComponentProps, useState } from 'react'
-import { RepositoriesInterface } from '../interfaces/repositories-interface'
+import { Repositories } from './data/repositories'
 import { ProjectCard } from './project-card'
 import { Modal } from './modal'
 interface ProjectListProps extends ComponentProps<'div'> {
-  repositories: RepositoriesInterface[]
+  repositories: Repositories[]
 }
 
 export const ProjectList = ({ repositories, ...props }: ProjectListProps) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
-  const [modalContent, setModalContent] =
-    useState<RepositoriesInterface | null>(null)
+  const [modalContent, setModalContent] = useState<Repositories | null>(null)
 
-  const openModal = (content: RepositoriesInterface) => {
+  const openModal = (content: Repositories) => {
     setModalContent(content)
     setIsModalOpen(true)
   }

@@ -2,11 +2,11 @@ import { ComponentProps } from 'react'
 import { useSection } from '../contexts/section'
 import { useTranslation } from 'react-i18next'
 
-interface NavLinksInterface extends ComponentProps<'div'> {
+interface NavLinks extends ComponentProps<'div'> {
   className?: string
 }
 
-export const NavLinks = ({ className, ...props }: NavLinksInterface) => {
+export const NavLinks = ({ className, ...props }: NavLinks) => {
   const { changeId } = useSection()
   const { t } = useTranslation()
 

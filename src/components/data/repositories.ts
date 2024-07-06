@@ -1,6 +1,15 @@
-import { RepositoriesInterface } from '../../interfaces/repositories-interface'
+export interface Repositories {
+  title: string
+  englishDescription: string
+  portugueseDescription: string
+  image: string
+  video: string
+  repositoryLink: string
+  projectLink: string
+  technologies: string[]
+}
 
-export const repositories: Array<RepositoriesInterface> = [
+export const repositories: Array<Repositories> = [
   {
     title: 'Starflix',
     englishDescription:

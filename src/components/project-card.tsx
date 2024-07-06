@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next'
 import { useTheme } from '../contexts/theme'
-import { RepositoriesInterface } from '../interfaces/repositories-interface'
+import { Repositories } from './data/repositories'
 import { ExternalLink, Github } from 'lucide-react'
 
 interface ProjectCardProps {
-  repo: RepositoriesInterface
+  repo: Repositories
   openModal: () => void
 }
 

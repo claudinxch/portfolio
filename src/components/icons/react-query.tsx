@@ -1,6 +1,6 @@
-import { IconsInterface } from '../../interfaces/icons-interface'
+import { Icons } from './css-icon'
 
-export const ReactQueryIcon = ({ width, strokeColor }: IconsInterface) => {
+export const ReactQueryIcon = ({ width, strokeColor }: Icons) => {
   return (
     <div className="relative">
       <svg

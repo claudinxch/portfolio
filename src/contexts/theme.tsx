@@ -3,7 +3,7 @@ import { useState, createContext, ReactNode, useContext } from 'react'
 
 type ThemeMode = 'light' | 'dark'
 
-interface ThemeContextType {
+interface ThemeContext {
   mode: ThemeMode
   toggleMode: () => void
 }
@@ -12,12 +12,12 @@ interface ThemeProviderProps {
   children: ReactNode
 }
 
-const initialContext: ThemeContextType = {
+const initialContext: ThemeContext = {
   mode: 'dark',
   toggleMode: () => {},
 }
 
-export const ThemeContext = createContext<ThemeContextType>(initialContext)
+export const ThemeContext = createContext<ThemeContext>(initialContext)
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const [mode, setMode] = useState<ThemeMode>('dark')
@@ -33,4 +33,4 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   )
 }
 
-export const useTheme = (): ThemeContextType => useContext(ThemeContext)
+export const useTheme = (): ThemeContext => useContext(ThemeContext)

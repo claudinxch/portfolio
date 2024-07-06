@@ -3,11 +3,11 @@ import { HomeSection } from './home-section'
 import { ProjectsSection } from './projects-section'
 import { SkillsSection } from './skills-section'
 
-interface SectionsInterface {
+interface Sections {
   id: number
 }
 
-export const Sections = ({ id }: SectionsInterface) => {
+export const Sections = ({ id }: Sections) => {
   switch (id) {
     case 0:
       return <HomeSection />

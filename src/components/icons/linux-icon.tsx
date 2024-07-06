@@ -1,6 +1,6 @@
-import { IconsInterface } from '../../interfaces/icons-interface'
+import { Icons } from './css-icon'
 
-export const LinuxIcon = ({ width, strokeColor }: IconsInterface) => {
+export const LinuxIcon = ({ width, strokeColor }: Icons) => {
   return (
     <div className="relative">
       <svg

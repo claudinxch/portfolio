@@ -5,7 +5,7 @@ import { useTheme } from '../contexts/theme'
 export const FollowMeBox = () => {
   const { mode } = useTheme()
   return (
-    <div className="hidden absolute right-0 bottom-40 float-right w-6 appearing-from-right lg:block">
+    <div className="hidden absolute right-0 bottom-40 float-right w-6 appearing-from-right 2xl:block">
       <div
         className={twMerge(
           "pr-[75px] absolute bottom-full right-0 text-[14px] leading-[24px] h-[24px] whitespace-nowrap text-right rotate-90 after:content-[''] after:absolute after:top-1/2 after:right-0 after:w-[50px] after:h-[1px]",

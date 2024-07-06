@@ -1,6 +1,6 @@
 import { ReactNode, createContext, useContext, useState } from 'react'
 
-interface SectionContextInterface {
+interface SectionContext {
   sectionId: number
   changeId: (newId?: number) => void
 }
@@ -9,16 +9,15 @@ interface SectionProviderProps {
   children: ReactNode
 }
 
-const initialContext: SectionContextInterface = {
+const initialContext: SectionContext = {
   sectionId: 0,
   changeId: () => {},
 }
 
-export const SectionContext =
-  createContext<SectionContextInterface>(initialContext)
+export const SectionContext = createContext<SectionContext>(initialContext)
 
 export const SectionProvider = ({ children }: SectionProviderProps) => {
-  const [sectionId, setSectionId] = useState<number>(0)
+  const [sectionId, setSectionId] = useState(0)
 
   const changeId = (newId?: number) => {
     if (newId !== undefined) {
@@ -35,5 +34,4 @@ export const SectionProvider = ({ children }: SectionProviderProps) => {
   )
 }
 
-export const useSection = (): SectionContextInterface =>
-  useContext(SectionContext)
+export const useSection = (): SectionContext => useContext(SectionContext)

@@ -1,6 +1,6 @@
-import { IconsInterface } from '../../interfaces/icons-interface'
+import { Icons } from './css-icon'
 
-export const JavaScriptIcon = ({ width }: IconsInterface) => {
+export const JavaScriptIcon = ({ width }: Icons) => {
   return (
     <div className="relative">
       <svg

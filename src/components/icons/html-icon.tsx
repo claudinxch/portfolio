@@ -1,10 +1,6 @@
-import { IconsInterface } from '../../interfaces/icons-interface'
+import { Icons } from './css-icon'
 
-export const HTMLIcon = ({
-  width,
-  strokeColor,
-  strokeWidth,
-}: IconsInterface) => {
+export const HTMLIcon = ({ width, strokeColor, strokeWidth }: Icons) => {
   return (
     <div className="relative">
       <svg
