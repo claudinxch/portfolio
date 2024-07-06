@@ -1,10 +1,10 @@
-export interface Icons {
+export interface Icon {
   width: number
   strokeColor?: string
   strokeWidth?: string
 }
 
-export const CSSIcon = ({ width, strokeColor, strokeWidth }: Icons) => {
+export const CSSIcon = ({ width, strokeColor, strokeWidth }: Icon) => {
   return (
     <div className="relative">
       <svg

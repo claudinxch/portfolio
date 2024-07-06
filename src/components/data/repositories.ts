@@ -1,4 +1,4 @@
-export interface Repositories {
+export interface Repository {
   title: string
   englishDescription: string
   portugueseDescription: string
@@ -9,7 +9,7 @@ export interface Repositories {
   technologies: string[]
 }
 
-export const repositories: Array<Repositories> = [
+export const repositories: Array<Repository> = [
   {
     title: 'Starflix',
     englishDescription:

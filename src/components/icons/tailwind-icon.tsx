@@ -1,6 +1,6 @@
-import { Icons } from './css-icon'
+import { Icon } from './css-icon'
 
-export const TailwindIcon = ({ width, strokeColor }: Icons) => {
+export const TailwindIcon = ({ width, strokeColor }: Icon) => {
   return (
     <div className="relative">
       <svg

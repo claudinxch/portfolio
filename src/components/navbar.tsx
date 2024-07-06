@@ -5,8 +5,7 @@ import { NavLinks } from './nav-links'
 import { ProfilePic } from './profile-pic'
 import { useContactModal } from '../contexts/contact-modal'
 import { useTranslation } from 'react-i18next'
-import i18next from 'i18next'
-// CCD0DA
+
 export const Navbar = () => {
   const { mode } = useTheme()
   const { handleModalState } = useContactModal()
@@ -49,7 +48,7 @@ export const Navbar = () => {
         <div className="h-20 w-full flex justify-between items-center py-4">
           <button
             onClick={() => handleModalState(true)}
-            className={`w-20 flex items-center justify-center py-[6px] font-semibold rounded-xl border-2 transition duration-300 hover:scale-110 ${mode === 'dark' ? 'border-[#EBEBEB] dark-button-hover' : 'border-[#212121] light-button-hover'} ${i18next.language === 'pt' && 'w-[110px]'}`}
+            className={`w-20 flex items-center justify-center py-[6px] font-semibold rounded-xl border-2 transition duration-300 hover:scale-110 ${mode === 'dark' ? 'border-[#EBEBEB] dark-button-hover' : 'border-[#212121] light-button-hover'} ${language === 'pt' && 'w-[110px]'}`}
           >
             {t('hire')}
           </button>
@@ -59,7 +58,7 @@ export const Navbar = () => {
             target="_blank"
             rel="noreferrer"
           >
-            CV
+            {language === 'en' ? 'Resume' : 'CV'}
           </a>
         </div>
       </div>

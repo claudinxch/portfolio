@@ -1,6 +1,6 @@
-import { Icons } from './css-icon'
+import { Icon } from './css-icon'
 
-export const HTMLIcon = ({ width, strokeColor, strokeWidth }: Icons) => {
+export const HTMLIcon = ({ width, strokeColor, strokeWidth }: Icon) => {
   return (
     <div className="relative">
       <svg

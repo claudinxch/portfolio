@@ -1,6 +1,6 @@
-import { Icons } from './css-icon'
+import { Icon } from './css-icon'
 
-export const SpringIcon = ({ width, strokeColor }: Icons) => {
+export const SpringIcon = ({ width, strokeColor }: Icon) => {
   return (
     <div className="relative">
       <svg
