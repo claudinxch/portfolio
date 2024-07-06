@@ -1,12 +1,12 @@
 import { KeyboardEvent, MouseEvent, useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useTheme } from '../contexts/theme'
-import { RepositoriesInterface } from '../interfaces/repositories-interface'
+import { Repositories } from './data/repositories'
 import { Title } from './title'
 import { ExternalLink, Github, X } from 'lucide-react'
 
 interface ModalProps {
-  content: RepositoriesInterface
+  content: Repositories
   closeModal: () => void
 }
 
