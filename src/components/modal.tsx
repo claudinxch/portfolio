@@ -1,7 +1,7 @@
 import { KeyboardEvent, MouseEvent, useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useTheme } from '../contexts/theme'
-import { Repository } from './data/repositories'
+import type { Repository } from './data/repositories'
 import { Title } from './title'
 import { ExternalLink, Github, X } from 'lucide-react'
 

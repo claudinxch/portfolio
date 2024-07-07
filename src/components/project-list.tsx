@@ -1,5 +1,5 @@
 import { ComponentProps, useState } from 'react'
-import { Repository } from './data/repositories'
+import type { Repository } from './data/repositories'
 import { ProjectCard } from './project-card'
 import { Modal } from './modal'
 interface ProjectListProps extends ComponentProps<'div'> {

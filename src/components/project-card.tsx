@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { useTheme } from '../contexts/theme'
-import { Repository } from './data/repositories'
+import type { Repository } from './data/repositories'
 import { ExternalLink, Github } from 'lucide-react'
 
 interface ProjectCardProps {

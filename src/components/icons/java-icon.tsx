@@ -1,4 +1,4 @@
-import { Icon } from './css-icon'
+import type { Icon } from './css-icon'
 
 export const JavaIcon = ({ width, strokeColor }: Icon) => {
   return (
