@@ -84,6 +84,7 @@ export const SkillsSection = () => {
             <div className="flex flex-col gap-5">
               <ExpBox
                 src={lanterna?.image}
+                alt={lanterna?.imageAlt}
                 title={lanterna?.title}
                 from="03/24"
                 to="05/24"
@@ -91,6 +92,7 @@ export const SkillsSection = () => {
               />
               <ExpBox
                 src={starFlix?.image}
+                alt={starFlix?.imageAlt}
                 title={starFlix?.title}
                 from="12/24"
                 to="06/24"

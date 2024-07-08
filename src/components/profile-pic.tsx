@@ -17,7 +17,11 @@ export const ProfilePic = ({
       {...props}
       className={`h-[200px] w-[200px] rounded-full border-2 overflow-hidden transition-colors duration-500 ${className || ''} ${mode === 'dark' ? 'border-[#212121]' : 'border-[#EBEBEB]'}`}
     >
-      <img src={photoUrl} alt="" className="w-full h-full object-cover" />
+      <img
+        src={photoUrl}
+        alt="Claudio Moura's photo"
+        className="w-full h-full object-cover"
+      />
     </div>
   )
 }

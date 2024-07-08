@@ -33,7 +33,7 @@ export const ProjectCard = ({ repo, openModal }: ProjectCardProps) => {
       <div className="hidden max-h-[120px] overflow-hidden lg:block">
         <img
           src={repo.image}
-          alt=""
+          alt={repo.imageAlt}
           width={240}
           height={48}
           loading="lazy"

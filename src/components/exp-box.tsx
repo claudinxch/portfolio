@@ -2,13 +2,21 @@ import { useTheme } from '../contexts/theme'
 
 interface ExpBoxProps {
   src: string | undefined
+  alt: string | undefined
   title: string | undefined
   from: string
   to: string
   description: string
 }
 
-export const ExpBox = ({ src, title, from, to, description }: ExpBoxProps) => {
+export const ExpBox = ({
+  src,
+  alt,
+  title,
+  from,
+  to,
+  description,
+}: ExpBoxProps) => {
   const { mode } = useTheme()
   return (
     <div
@@ -16,7 +24,7 @@ export const ExpBox = ({ src, title, from, to, description }: ExpBoxProps) => {
     >
       <img
         src={src}
-        alt=""
+        alt={alt}
         width={240}
         height={48}
         loading="lazy"

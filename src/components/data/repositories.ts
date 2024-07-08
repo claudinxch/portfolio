@@ -3,6 +3,7 @@ export interface Repository {
   englishDescription: string
   portugueseDescription: string
   image: string
+  imageAlt: string
   video: string
   repositoryLink: string
   projectLink: string
@@ -17,6 +18,7 @@ export const repositories: Array<Repository> = [
     portugueseDescription:
       'Starflix é o seu destino ideal para filmes em cartaz, futuros lançamentos e os mais bem avaliados, tudo em um só lugar. Além disso, você pode salvar seus filmes favoritos e acessá-los a qualquer hora!',
     image: '/img/starflixpage.png',
+    imageAlt: 'StarFlix home page',
     video: '/video/starflix.mkv',
     repositoryLink: 'https://github.com/claudinxch/star-flix',
     projectLink: 'https://star-flix.netlify.app',
@@ -29,6 +31,7 @@ export const repositories: Array<Repository> = [
     portugueseDescription:
       'Projeto open-source para criação de uma landing page para uma ONG dedicada a apoiar mulheres que sofrem abusos. É uma interface amigável que destaca a missão, serviços, histórias e eventos da ONG.',
     image: '/img/lanterna-luminosa.png',
+    imageAlt: 'Lanterna Luminosa home page',
     video: '/video/lanternaluminosa.mkv',
     repositoryLink: 'https://github.com/bolodissenoura/lantera-luminosa',
     projectLink: 'https://www.lanternaluminosa.com.br',
@@ -41,6 +44,7 @@ export const repositories: Array<Repository> = [
     portugueseDescription:
       'Meal Map traz um mundo de gastronomia, oferecendo qualquer receita que você desejar! Explore uma vasta coleção de pratos de várias culinárias e dietas. Salve suas receitas favoritas e descubra a refeição perfeita para qualquer ocasião. Atualmente em progresso.',
     image: '/img/meal-map.png',
+    imageAlt: 'Meal Map home page',
     video: '/video/mealmap.mkv',
     repositoryLink: 'https://github.com/claudinxch/meal-map',
     projectLink: '',
@@ -53,6 +57,7 @@ export const repositories: Array<Repository> = [
     portugueseDescription:
       'Site para cronometrar suas sessões de pomodoro. Permite escolher entre pausas longas e curtas, garantindo produtividade e foco ideais. O site notificará quando o tempo acabar. Perfeito para estudar e melhorar suas habilidades de gerenciamento de tempo.',
     image: '/img/pomodorobuddy.png',
+    imageAlt: 'Pomodoro Buddy home page',
     video: '/video/pomodorobuddy.mkv',
     repositoryLink: 'https://github.com/claudinxch/pomodoro-website',
     projectLink: 'https://pomodoro-buddy.netlify.app',
@@ -65,6 +70,7 @@ export const repositories: Array<Repository> = [
     portugueseDescription:
       'Token Generator oferece uma maneira rápida e fácil de criar tokens únicos. Permite gerar um token com apenas alguns cliques. Seja para autenticação básica ou para fins de segurança simples, Token Generator é a solução ideal.',
     image: '/img/token-generator.png',
+    imageAlt: 'Token Generator home page',
     video: '/video/tokengenerator.mkv',
     repositoryLink: 'https://github.com/claudinxch/token-generator',
     projectLink: 'https://token-generator-one.vercel.app',
@@ -77,6 +83,7 @@ export const repositories: Array<Repository> = [
     portugueseDescription:
       'Este aplicativo fornece informações meteorológicas em tempo real, exibindo temperatura, velocidade do vento e umidade de qualquer lugar do mundo. Com sua interface amigável, você pode facilmente verificar as condições climáticas atuais.',
     image: '/img/weatherapp.png',
+    imageAlt: 'Weather Now home page',
     video: '/video/weatherapp.mkv',
     repositoryLink: 'https://github.com/claudinxch/weather-app',
     projectLink: 'https://claudinxch.github.io/weather-app/',
