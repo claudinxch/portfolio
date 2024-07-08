@@ -22,6 +22,7 @@ export const Modal = ({ content, closeModal }: ModalProps) => {
     modalRef.current?.focus()
   }, [])
 
+  // Function to close modal with click outside the div with content
   const handleClickOutside = (e: MouseEvent<HTMLDivElement>) => {
     if (e.target === modalRef.current) {
       closeModal()
@@ -32,6 +33,7 @@ export const Modal = ({ content, closeModal }: ModalProps) => {
     <div
       ref={modalRef}
       tabIndex={0}
+      /* Function to close modal with Esc key */
       onKeyDown={(e: KeyboardEvent<HTMLDivElement>) => {
         if (e.key === 'Escape') {
           closeModal()

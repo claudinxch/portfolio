@@ -20,6 +20,7 @@ export const ModeButton = () => {
     }
   }, [isAnimating])
 
+  // Change the theme and load icon animation
   const handleClick = () => {
     toggleMode()
     setIsAnimating(true)

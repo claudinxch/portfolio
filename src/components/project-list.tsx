@@ -10,6 +10,7 @@ export const ProjectList = ({ repositories, ...props }: ProjectListProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [modalContent, setModalContent] = useState<Repository | null>(null)
 
+  // Open modal with the card content
   const openModal = (content: Repository) => {
     setModalContent(content)
     setIsModalOpen(true)

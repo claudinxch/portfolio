@@ -10,10 +10,13 @@ import { twMerge } from 'tailwind-merge'
 import emailjs from '@emailjs/browser'
 import { useTranslation } from 'react-i18next'
 
+// Email.JS params
 const service: string = import.meta.env.VITE_SERVICE_ID
 const template: string = import.meta.env.VITE_TEMPLATE_ID
 const key: string = import.meta.env.VITE_API_KEY
 
+// Define a schema for the contact form using Zod
+// This schema specifies the expected structure and validation rules for the form data
 const contactFormSchema = z.object({
   name: z.string().min(1),
   email: z.string().email(),
@@ -43,12 +46,14 @@ export const ContactModal = () => {
     modalRef.current?.focus()
   }, [])
 
+  // Function to close modal with click outside the div with content
   const handleClickOutside = (e: MouseEvent<HTMLDivElement>) => {
     if (e.target === modalRef.current) {
       handleModalState(false)
     }
   }
 
+  // Send email with EmailJS
   const handleContactSubmit: SubmitHandler<ContactFormSchema> = async (
     data,
   ) => {

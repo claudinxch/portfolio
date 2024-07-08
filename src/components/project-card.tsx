@@ -17,7 +17,7 @@ export const ProjectCard = ({ repo, openModal }: ProjectCardProps) => {
   const handleOpenModal = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>,
   ) => {
-    // Check if the clicked element is an anchor tag
+    // Check if the clicked element is an anchor tag so it does not open modal
     const target = event.target as HTMLElement
     if (target.closest('a')) {
       return
