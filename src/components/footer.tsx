@@ -13,6 +13,8 @@ export const Footer = ({ className, ...props }: FooterProps) => {
   const { sectionId } = useSection()
   const { t } = useTranslation()
 
+  const date = new Date()
+
   useEffect(() => {
     if (sectionId === 0) {
       setIsAnimating(true)
@@ -28,7 +30,7 @@ export const Footer = ({ className, ...props }: FooterProps) => {
       <div className="flex flex-col items-center">
         <p className="text-base tracking-tight">{t('footer')}</p>
         <p className="text-sm tracking-tighter">
-          all content © Claudio Moura, 2024
+          all content © Claudio Moura, {Number(date.getFullYear())}
         </p>
       </div>
     </footer>

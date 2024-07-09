@@ -18,6 +18,17 @@ export const AboutMeSection = () => {
     i18n: { language },
   } = useTranslation()
 
+  // Gets age by calculating the difference in milliseconds between today and my birthday
+  // and dividing by 365
+  const getAge = () => {
+    const now = new Date()
+    const birthDay = new Date(2004, 9, 9)
+    const diffTime = Math.abs(Number(now) - Number(birthDay))
+    const diffYears = Math.floor(diffTime / (1000 * 60 * 60 * 24) / 365)
+
+    return diffYears
+  }
+
   return (
     <Container>
       <Title className={language === 'en' ? 'w-[180px]' : 'w-[195px]'}>
@@ -66,7 +77,7 @@ export const AboutMeSection = () => {
                     <strong className="custom-text">
                       {language === 'en' ? 'Age' : 'Idade'}:{' '}
                     </strong>{' '}
-                    19
+                    {getAge()}
                   </li>
                   <li className="text-sm lg:text-base">
                     <strong className="custom-text">Email: </strong>
