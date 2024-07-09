@@ -24,7 +24,7 @@ export const AboutMeSection = () => {
     const now = new Date()
     const birthDay = new Date(2004, 9, 9)
     const diffTime = Math.abs(Number(now) - Number(birthDay))
-    const diffYears = Math.floor(diffTime / (1000 * 60 * 60 * 24) / 365)
+    const diffYears = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365))
 
     return diffYears
   }
