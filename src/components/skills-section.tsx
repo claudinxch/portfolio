@@ -59,14 +59,17 @@ export const SkillsSection = () => {
               <TailwindIcon width={75} />
             </IconBox>
             <IconBox>
+              <NextIcon width={75} strokeColor="" />
+            </IconBox>
+            <IconBox>
               <HTMLIcon width={75} strokeColor="" strokeWidth="1.0" />
             </IconBox>
             <IconBox>
               <CSSIcon width={75} strokeColor="#EC4899" strokeWidth="1.0" />
             </IconBox>
-            <IconBox>
+            {/* <IconBox>
               <ReactQueryIcon width={75} strokeColor="" />
-            </IconBox>
+            </IconBox> */}
             <IconBox>
               <JavaIcon width={75} strokeColor="" />
             </IconBox>
@@ -115,9 +118,6 @@ export const SkillsSection = () => {
               {t('skills_learning')}
             </h4>
             <div className="flex flex-row flex-wrap justify-center p-5 gap-5 sm:justify-normal ">
-              <IconBox>
-                <NextIcon width={65} />
-              </IconBox>
               <IconBox>
                 <JestIcon width={65} />
               </IconBox>
