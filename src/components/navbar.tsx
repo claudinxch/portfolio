@@ -48,7 +48,7 @@ export const Navbar = () => {
         <div className="h-20 w-full flex justify-between items-center py-4">
           <button
             onClick={() => handleModalState(true)}
-            className={`w-20 flex items-center justify-center py-[6px] font-semibold rounded-xl border-2 transition duration-300 hover:scale-110 ${mode === 'dark' ? 'border-[#EBEBEB] dark-button-hover' : 'border-[#212121] light-button-hover'} ${language === 'pt' && 'w-[110px]'}`}
+            className={`w-[110px] flex items-center justify-center py-[6px] font-semibold rounded-xl border-2 transition duration-300 hover:scale-110 ${mode === 'dark' ? 'border-[#EBEBEB] dark-button-hover' : 'border-[#212121] light-button-hover'}`} // ${language === 'pt' && 'w-[110px]'}
           >
             {t('hire')}
           </button>
