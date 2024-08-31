@@ -1,5 +1,5 @@
 import { KeyboardEvent, MouseEvent, useEffect, useRef } from 'react'
-import { ChevronDown, CircleCheckBig, LoaderCircle, X } from 'lucide-react'
+import { ArrowDown, CircleCheckBig, LoaderCircle, X } from 'lucide-react'
 import { useTheme } from '../contexts/theme'
 import { useContactModal } from '../contexts/contact-modal'
 import { SecondaryButton } from './secondary-button'
@@ -88,8 +88,8 @@ export const ContactModal = () => {
           />
         </button>
         <h3 className="inline-flex text-2xl tracking-tight gap-3">
-          {language === 'en' ? 'Write me a message' : 'Escreva me uma mensagem'}
-          <ChevronDown size={28} className="self-center" />
+          {language === 'en' ? 'Write me a message' : 'Escreva-me uma mensagem'}
+          <ArrowDown size={28} className="self-center" />
         </h3>
 
         <form

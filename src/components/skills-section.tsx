@@ -101,7 +101,7 @@ export const SkillsSection = () => {
                 description={t('skills_exp_desc2')}
               />
               <span
-                className={`text-xs pl-1 ${mode === 'dark' ? 'text-slate-200/50' : 'text-slate-400'}`}
+                className={`text-xs self-end pl-1 ${mode === 'dark' ? 'text-slate-200/50' : 'text-slate-400'}`}
               >
                 {t('skills_message')}
               </span>

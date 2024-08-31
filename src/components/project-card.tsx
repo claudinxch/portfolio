@@ -28,7 +28,7 @@ export const ProjectCard = ({ repo, openModal }: ProjectCardProps) => {
   return (
     <div
       onClick={handleOpenModal}
-      className={`group flex relative w-[350px] h-[250px] gap-4 p-4 border-[1px] rounded transition-all duration-300 cursor-pointer hover:-translate-y-[2px] ${mode === 'dark' ? 'border-slate-200/5 hover:bg-zinc-800/20' : 'border-[#D4D4D4] hover:bg-zinc-200/50'} lg:w-[600px]`}
+      className={`group flex relative w-[350px] max-h-[250px] gap-4 p-4 border-[1px] rounded transition-all duration-300 cursor-pointer hover:-translate-y-[2px] ${mode === 'dark' ? 'border-slate-200/5 hover:bg-zinc-800/20' : 'border-[#D4D4D4] hover:bg-zinc-200/50'} lg:w-[600px]`}
     >
       <div className="hidden max-h-[120px] overflow-hidden lg:block">
         <img
@@ -40,7 +40,7 @@ export const ProjectCard = ({ repo, openModal }: ProjectCardProps) => {
           className="rounded border-2 border-[#E040FB]/30 object-fill h-full"
         />
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-1">
         <h3 className="text-xl leading-[1.2] text-transparent bg-clip-text bg-gradient-to-r from-[#EC4899] to-[#8B5CF6]">
           <a
             href={repo.projectLink}
@@ -80,14 +80,24 @@ export const ProjectCard = ({ repo, openModal }: ProjectCardProps) => {
           </a>
         </h3>
         <p
-          className={`max-w-[310px] h-[126px] mt-2 leading-normal text-sm ${mode === 'dark' ? 'text-[#EFF1F5]' : 'text-[#101010]'}`}
+          className={`max-w-[310px] max-h-[126px] leading-normal text-sm ${mode === 'dark' ? 'text-[#EFF1F5]' : 'text-[#101010]'}`}
         >
           {language === 'en'
             ? repo.englishDescription
             : repo.portugueseDescription}
         </p>
+        <div className="h-4 flex gap-1 mt-2 items-center">
+          {repo.technologies.map((tech, i) => (
+            <span
+              key={i}
+              className={`py-[1px] px-[8px] rounded-full text-sm font-light ${mode === 'dark' ? 'bg-[#EFF1F5]/5 text-[#EFF1F5]' : 'bg-[#101010]/5 text-[#101010]'}`}
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
         <div
-          className={`flex gap-6 mt-2 ${mode === 'dark' ? 'text-[#EFF1F5]' : 'text-[#101010]'}`}
+          className={`flex ml-1 mt-2 gap-6 ${mode === 'dark' ? 'text-[#EFF1F5]' : 'text-[#101010]'}`}
         >
           <a
             href={repo.projectLink}
@@ -105,16 +115,6 @@ export const ProjectCard = ({ repo, openModal }: ProjectCardProps) => {
           >
             <Github size={20} />
           </a>
-        </div>
-        <div className="h-4 flex gap-1 items-center mt-3">
-          {repo.technologies.map((tech, i) => (
-            <span
-              key={i}
-              className={`py-[1px] px-[8px] rounded-full text-sm font-light ${mode === 'dark' ? 'bg-[#EFF1F5]/5 text-[#EFF1F5]' : 'bg-[#101010]/5 text-[#101010]'}`}
-            >
-              {tech}
-            </span>
-          ))}
         </div>
       </div>
       <button className="absolute hidden text-[#101010] text-base -top-2 right-8 bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] rounded-md px-2 click-me-appear group-hover:flex">
